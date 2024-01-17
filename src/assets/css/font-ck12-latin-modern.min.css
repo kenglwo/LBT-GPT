@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "CK12LatinModern";
+  src: url("LMRoman10-CK12-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CK12LatinModern";
+  src: url("LMRoman10-CK12-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CK12LatinModern";
+  src: url("LMRoman10-CK12-BoldItalic.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}

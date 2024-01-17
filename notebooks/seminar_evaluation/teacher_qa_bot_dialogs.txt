@@ -1,0 +1,133 @@
+teacher-qa-bot
+===========================================================
+0
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+Explain the principle of “form follows function”, providing one example of how this principle applies to the structure and organization of eukaryotic cells.
+ribosomes in eukaryotic cells come in a form that is in high numbers so they can provide the function of synthesizing a lot of protein
+Thank you for the response! As a reference, here is our model solution:
+The principle of form follows function means that the function of a particular structure is specifically designed to help the structure carry out its particular function. There are many examples where a type of eukaryotic cell is enriched in a particular structure or organelle to optimize its ability to perform a particular function. These include:  (A)	Cells that need to make a lot of proteins, like pancreatic cells that make a high quantity of digestive enzymes, contain many ribosomes, the structure responsible for protein synthesis.  (B) Muscle cells have a very high concentration of mitochondria in order to make high amounts of ATP (the cell’s short-term stored energy) to keep your body moving.
+What are ribosomes composed of, where in the cell are they used and what function are they used for? What provides them with the instructions for their function?
+ribosomes are composed of a small and large subunit
+This is a good start! You can take a look at our model solution:
+Each ribosome is composed of two subunits, a large and a small, each of which contains both proteins and RNA. Ribosomes may group as clusters or remain individual ribosomes that freely float in the cytoplasm. Additionally, ribosomes may also attach to the cytoplasmic side of the endoplasmic reticulum or the nuclear envelope’s outer membrane. They are used for linking amino acids together in a particular order to make proteins, using the information within mRNA (which is made using DNA in the nucleus) to direct the identity and order of amino acids in the protein.
+How does the act of breathing support cellular respiration in eukaryotic cells, what are the key inputs and outputs of this cellular process and where in the cell does it occur?
+cells need oxygen to produce ATP
+This is a good start! You can take a look at our model solution:
+In breathing, the body takes in oxygen during inhalation and releases carbon dioxide during exhalation. This is related to cellular respiration, which uses oxygen to make adenosine triphosphate (ATP), a form of short-term energy storage, and produces carbon dioxide as a byproduct. Thus, breathing provides the oxygen that the body’s cells need for cellular respiration and removes the carbon dioxide they produce as waste. In eukaryotic cells, cellular respiration occurs in the mitochondria.
+What is the importance of peroxisomes and how would their absence or reduction affect an organism?
+break down fatty acids and amino acids, detoxifying our body
+This is a good start! You can take a look at our model solution:
+Peroxisomes carry out oxidation reactions that break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. (Many of these oxidation reactions release hydrogen peroxide, H2O2, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the H2O2 into oxygen and water.) For example, peroxisomes in liver cells detoxify alcohol. Their absence or reduction would lead to death of the organism.
+Great job! You answered all the questions!
+
+
+===========================================================
+1
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+Explain the principle of “form follows function”, providing one example of how this principle applies to the structure and organization of eukaryotic cells.
+One way in that form follows function in eukaryotic cells is that muscle cells have a high concentration of mitochondria to produce ATP in comparison to other cells because muscles use a lot of energy and mitochondria produce the energy needed by the muscles to function.
+Thank you for the response! As a reference, here is our model solution:
+The principle of form follows function means that the function of a particular structure is specifically designed to help the structure carry out its particular function. There are many examples where a type of eukaryotic cell is enriched in a particular structure or organelle to optimize its ability to perform a particular function. These include:  (A)	Cells that need to make a lot of proteins, like pancreatic cells that make a high quantity of digestive enzymes, contain many ribosomes, the structure responsible for protein synthesis.  (B) Muscle cells have a very high concentration of mitochondria in order to make high amounts of ATP (the cell’s short-term stored energy) to keep your body moving.
+What are ribosomes composed of, where in the cell are they used and what function are they used for? What provides them with the instructions for their function?
+Form follows function means that the structure of something is built or formed in a way that allows for the activities that are done within them to be done effectively.
+Sorry, that's not quite right. You might want to refer to the lesson or our model solution:
+Each ribosome is composed of two subunits, a large and a small, each of which contains both proteins and RNA. Ribosomes may group as clusters or remain individual ribosomes that freely float in the cytoplasm. Additionally, ribosomes may also attach to the cytoplasmic side of the endoplasmic reticulum or the nuclear envelope’s outer membrane. They are used for linking amino acids together in a particular order to make proteins, using the information within mRNA (which is made using DNA in the nucleus) to direct the identity and order of amino acids in the protein.
+How does the act of breathing support cellular respiration in eukaryotic cells, what are the key inputs and outputs of this cellular process and where in the cell does it occur?
+
+
+===========================================================
+2
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+Explain the principle of “form follows function”, providing one example of how this principle applies to the structure and organization of eukaryotic cells.
+Form follows function, in terms of cell biology, relates to the idea that cell components and organelles is directly related to their function. This relates to the structure and organization of eukaryotic cells in that each organelle has a unique and specific role 
+Thank you for the response! As a reference, here is our model solution:
+The principle of form follows function means that the function of a particular structure is specifically designed to help the structure carry out its particular function. There are many examples where a type of eukaryotic cell is enriched in a particular structure or organelle to optimize its ability to perform a particular function. These include:  (A)	Cells that need to make a lot of proteins, like pancreatic cells that make a high quantity of digestive enzymes, contain many ribosomes, the structure responsible for protein synthesis.  (B) Muscle cells have a very high concentration of mitochondria in order to make high amounts of ATP (the cell’s short-term stored energy) to keep your body moving.
+What are ribosomes composed of, where in the cell are they used and what function are they used for? What provides them with the instructions for their function?
+Ribosomes are composed of protein and RNA complexes. They are used in the cytoplasm and may be attached to the plasma membrane or the endoplasmic reticulum's cytoplasmic side and the nuclear envelope's outer membrane. They are responsible for protein synthesis, and they receive orders from the nucleus where the DNA transcrives into messenger RNA, which then travels to the ribosomes and translates the code 
+Thank you for the response! As a reference, here is our model solution:
+Each ribosome is composed of two subunits, a large and a small, each of which contains both proteins and RNA. Ribosomes may group as clusters or remain individual ribosomes that freely float in the cytoplasm. Additionally, ribosomes may also attach to the cytoplasmic side of the endoplasmic reticulum or the nuclear envelope’s outer membrane. They are used for linking amino acids together in a particular order to make proteins, using the information within mRNA (which is made using DNA in the nucleus) to direct the identity and order of amino acids in the protein.
+How does the act of breathing support cellular respiration in eukaryotic cells, what are the key inputs and outputs of this cellular process and where in the cell does it occur?
+The act of breathing supports cellular respiration by carrying out oxidation reactions and detoxifying poisons that may enter the body. The key inputs of this process are oxygen and the outputs are hydrogen peroxide, H202 and water. This occurs in the membrane
+Thank you for the response! As a reference, here is our model solution:
+In breathing, the body takes in oxygen during inhalation and releases carbon dioxide during exhalation. This is related to cellular respiration, which uses oxygen to make adenosine triphosphate (ATP), a form of short-term energy storage, and produces carbon dioxide as a byproduct. Thus, breathing provides the oxygen that the body’s cells need for cellular respiration and removes the carbon dioxide they produce as waste. In eukaryotic cells, cellular respiration occurs in the mitochondria.
+What is the importance of peroxisomes and how would their absence or reduction affect an organism?
+Peroxisomes carry out oxidation reactions in the membrane. Their absense would cause poisons to enter the body and would lead to certain things not being broken down correctly. 
+Thank you for the response! As a reference, here is our model solution:
+Peroxisomes carry out oxidation reactions that break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. (Many of these oxidation reactions release hydrogen peroxide, H2O2, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the H2O2 into oxygen and water.) For example, peroxisomes in liver cells detoxify alcohol. Their absence or reduction would lead to death of the organism.
+Great job! You answered all the questions!
+
+
+===========================================================
+3
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+Explain the principle of “form follows function”, providing one example of how this principle applies to the structure and organization of eukaryotic cells.
+ribosomes, the organelles responsible for protein synthesis, are found in high numbers in eukaryotic cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes
+Thank you for the response! As a reference, here is our model solution:
+The principle of form follows function means that the function of a particular structure is specifically designed to help the structure carry out its particular function. There are many examples where a type of eukaryotic cell is enriched in a particular structure or organelle to optimize its ability to perform a particular function. These include:  (A)	Cells that need to make a lot of proteins, like pancreatic cells that make a high quantity of digestive enzymes, contain many ribosomes, the structure responsible for protein synthesis.  (B) Muscle cells have a very high concentration of mitochondria in order to make high amounts of ATP (the cell’s short-term stored energy) to keep your body moving.
+What are ribosomes composed of, where in the cell are they used and what function are they used for? What provides them with the instructions for their function?
+
+
+===========================================================
+4
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+Explain the principle of “form follows function”, providing one example of how this principle applies to the structure and organization of eukaryotic cells.
+every structure has specific needs, and the appearance of the structure will fit those needs. an example from cells is that cells that need to make lots of proteins will have lots of ribosomes.
+Thank you for the response! As a reference, here is our model solution:
+The principle of form follows function means that the function of a particular structure is specifically designed to help the structure carry out its particular function. There are many examples where a type of eukaryotic cell is enriched in a particular structure or organelle to optimize its ability to perform a particular function. These include:  (A)	Cells that need to make a lot of proteins, like pancreatic cells that make a high quantity of digestive enzymes, contain many ribosomes, the structure responsible for protein synthesis.  (B) Muscle cells have a very high concentration of mitochondria in order to make high amounts of ATP (the cell’s short-term stored energy) to keep your body moving.
+What are ribosomes composed of, where in the cell are they used and what function are they used for? What provides them with the instructions for their function?
+they are protein and RNA complexes, and they have a large subunit and a small subunit. they are used to make protein. they get instructions from mRNA (messenger RNA) to make these proteins.
+This is a great answer! Our model solution is:
+Each ribosome is composed of two subunits, a large and a small, each of which contains both proteins and RNA. Ribosomes may group as clusters or remain individual ribosomes that freely float in the cytoplasm. Additionally, ribosomes may also attach to the cytoplasmic side of the endoplasmic reticulum or the nuclear envelope’s outer membrane. They are used for linking amino acids together in a particular order to make proteins, using the information within mRNA (which is made using DNA in the nucleus) to direct the identity and order of amino acids in the protein.
+How does the act of breathing support cellular respiration in eukaryotic cells, what are the key inputs and outputs of this cellular process and where in the cell does it occur?
+breathing provides oxygen which is necessary for mitochondria to do cellular respiration, and breathing also expels carbion dioxide which is a waste product of cellular respiration.
+This is a great answer! Our model solution is:
+In breathing, the body takes in oxygen during inhalation and releases carbon dioxide during exhalation. This is related to cellular respiration, which uses oxygen to make adenosine triphosphate (ATP), a form of short-term energy storage, and produces carbon dioxide as a byproduct. Thus, breathing provides the oxygen that the body’s cells need for cellular respiration and removes the carbon dioxide they produce as waste. In eukaryotic cells, cellular respiration occurs in the mitochondria.
+What is the importance of peroxisomes and how would their absence or reduction affect an organism?
+they break down amino and fatty acids, and they also detox poisons that enter the body. without peroxisomes, harmful substances like hydrogen peroxide would build up in the body and cause problems.
+Thank you for the response! As a reference, here is our model solution:
+Peroxisomes carry out oxidation reactions that break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. (Many of these oxidation reactions release hydrogen peroxide, H2O2, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the H2O2 into oxygen and water.) For example, peroxisomes in liver cells detoxify alcohol. Their absence or reduction would lead to death of the organism.
+Great job! You answered all the questions!
+
+
+===========================================================
+5
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+Explain the principle of “form follows function”, providing one example of how this principle applies to the structure and organization of eukaryotic cells.
+structure should be used related to function
+Thank you for the response! As a reference, here is our model solution:
+The principle of form follows function means that the function of a particular structure is specifically designed to help the structure carry out its particular function. There are many examples where a type of eukaryotic cell is enriched in a particular structure or organelle to optimize its ability to perform a particular function. These include:  (A)	Cells that need to make a lot of proteins, like pancreatic cells that make a high quantity of digestive enzymes, contain many ribosomes, the structure responsible for protein synthesis.  (B) Muscle cells have a very high concentration of mitochondria in order to make high amounts of ATP (the cell’s short-term stored energy) to keep your body moving.
+What are ribosomes composed of, where in the cell are they used and what function are they used for? What provides them with the instructions for their function?
+they can be found attached to plasma membranes cytoplasmic side of the endoplasmic reticulum side and the nuclear outer membrane.  they get their "orders" for protein synthesis (their function) from the nucleaus where the dna transcribes into the rna.  they are responsible for protein synthesis.  
+Thank you for the response! As a reference, here is our model solution:
+Each ribosome is composed of two subunits, a large and a small, each of which contains both proteins and RNA. Ribosomes may group as clusters or remain individual ribosomes that freely float in the cytoplasm. Additionally, ribosomes may also attach to the cytoplasmic side of the endoplasmic reticulum or the nuclear envelope’s outer membrane. They are used for linking amino acids together in a particular order to make proteins, using the information within mRNA (which is made using DNA in the nucleus) to direct the identity and order of amino acids in the protein.
+How does the act of breathing support cellular respiration in eukaryotic cells, what are the key inputs and outputs of this cellular process and where in the cell does it occur?
+i don't know
+This is a good start! You can take a look at our model solution:
+In breathing, the body takes in oxygen during inhalation and releases carbon dioxide during exhalation. This is related to cellular respiration, which uses oxygen to make adenosine triphosphate (ATP), a form of short-term energy storage, and produces carbon dioxide as a byproduct. Thus, breathing provides the oxygen that the body’s cells need for cellular respiration and removes the carbon dioxide they produce as waste. In eukaryotic cells, cellular respiration occurs in the mitochondria.
+What is the importance of peroxisomes and how would their absence or reduction affect an organism?
+they break down fatty acids and amino acids and detoxify poisons that may enter the body, the body would store toxins without them
+Thank you for the response! As a reference, here is our model solution:
+Peroxisomes carry out oxidation reactions that break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. (Many of these oxidation reactions release hydrogen peroxide, H2O2, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the H2O2 into oxygen and water.) For example, peroxisomes in liver cells detoxify alcohol. Their absence or reduction would lead to death of the organism.
+Great job! You answered all the questions!
+
+
+===========================================================
+6
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+Explain the principle of “form follows function”, providing one example of how this principle applies to the structure and organization of eukaryotic cells.
+Basically that however something is designed it should allow the function of the purpose of the item - you shouldn't design needlessly without considering the function
+This is a good start! You can take a look at our model solution:
+The principle of form follows function means that the function of a particular structure is specifically designed to help the structure carry out its particular function. There are many examples where a type of eukaryotic cell is enriched in a particular structure or organelle to optimize its ability to perform a particular function. These include:  (A)	Cells that need to make a lot of proteins, like pancreatic cells that make a high quantity of digestive enzymes, contain many ribosomes, the structure responsible for protein synthesis.  (B) Muscle cells have a very high concentration of mitochondria in order to make high amounts of ATP (the cell’s short-term stored energy) to keep your body moving.
+What are ribosomes composed of, where in the cell are they used and what function are they used for? What provides them with the instructions for their function?
+Ribosomes are cells responsible to protein synthesis. mRNA provides them instructions to carry out their orders
+Thank you for the response! As a reference, here is our model solution:
+Each ribosome is composed of two subunits, a large and a small, each of which contains both proteins and RNA. Ribosomes may group as clusters or remain individual ribosomes that freely float in the cytoplasm. Additionally, ribosomes may also attach to the cytoplasmic side of the endoplasmic reticulum or the nuclear envelope’s outer membrane. They are used for linking amino acids together in a particular order to make proteins, using the information within mRNA (which is made using DNA in the nucleus) to direct the identity and order of amino acids in the protein.
+How does the act of breathing support cellular respiration in eukaryotic cells, what are the key inputs and outputs of this cellular process and where in the cell does it occur?
+

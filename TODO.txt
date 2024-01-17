@@ -1,0 +1,11 @@
+CK-12 files to be removed
+
+ck12_cell_biology/
+font-ck12-latin-modern.min.css
+templates.min.css
+styles.css
+font-proximanova.min.css
+images/flexi*
+copyright.js
+
+-> index html logo and credits

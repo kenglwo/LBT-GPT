@@ -1,0 +1,72 @@
+## Question/Expectations from multiple-choice pilot
+
+export const eukaryoticCellTopicsExp = `Topic 1: What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+Fact 1.1: ''Form follows function'' in cell biology.
+Fact 1.2: Structure of a cell or its components is related to its function.
+Fact 1.3: Example - ribosomes in cells that synthesize large amounts of protein.
+
+Topic 2: Describe the structure and function of ribosomes in eukaryotic cells. How do they contribute to protein synthesis?
+Fact 2.1: Structure and function of ribosomes.
+Fact 2.2: Ribosomes are responsible for protein synthesis.
+Fact 2.3: Ribosomes are large protein and RNA complexes.
+Fact 2.4: Ribosomes receive “orders” for protein synthesis from the nucleus.
+Fact 2.5: mRNA travels to the ribosomes for translation.
+
+Topic 3: Explain the role of mitochondria in cells. Why are they often referred to as the ''powerhouses'' of cells?
+Fact 3.1: Role of mitochondria in cells.
+Fact 3.2: Mitochondria make ATP, the cell’s main energy-carrying molecule.
+Fact 3.3: Mitochondria use chemical energy in glucose and other nutrients to make ATP.
+Fact 3.4: Process of cellular respiration in mitochondria.
+
+Topic 4: How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?
+Fact 4.1: Concentration of mitochondria in muscle cells.
+Fact 4.2: High concentration of mitochondria in muscle cells due to high energy requirement.
+Fact 4.3: Example of ''form follows function'' principle.
+
+Topic 5: What are peroxisomes and what functions do they perform in cells? How do they contribute to the detoxification process in the body?
+Fact 5.1: Structure and function of peroxisomes.
+Fact 5.2: Peroxisomes carry out oxidation reactions to break down fatty acids and amino acids.
+Fact 5.3: Peroxisomes detoxify many poisons.
+Fact 5.4: Peroxisomes break down hydrogen peroxide into oxygen and water.
+Fact 5.5: Example - peroxisomes in liver cells detoxify alcohol.`;
+
+
+
+export const QATopicsHuman = [
+  { 
+    question: "Explain the principle of “form follows function”, providing one example of how this principle applies to the structure and organization of eukaryotic cells.",
+    solution: "The principle of form follows function means that the function of a particular structure is specifically designed to help the structure carry out its particular function. There are many examples where a type of eukaryotic cell is enriched in a particular structure or organelle to optimize its ability to perform a particular function. These include:  (A)	Cells that need to make a lot of proteins, like pancreatic cells that make a high quantity of digestive enzymes, contain many ribosomes, the structure responsible for protein synthesis.  (B) Muscle cells have a very high concentration of mitochondria in order to make high amounts of ATP (the cell’s short-term stored energy) to keep your body moving."
+  }, {
+    question: "What are ribosomes composed of, where in the cell are they used and what function are they used for? What provides them with the instructions for their function?",
+    solution: "Each ribosome is composed of two subunits, a large and a small, each of which contains both proteins and RNA. Ribosomes may group as clusters or remain individual ribosomes that freely float in the cytoplasm. Additionally, ribosomes may also attach to the cytoplasmic side of the endoplasmic reticulum or the nuclear envelope’s outer membrane. They are used for linking amino acids together in a particular order to make proteins, using the information within mRNA (which is made using DNA in the nucleus) to direct the identity and order of amino acids in the protein."
+  }, {
+    question: "How does the act of breathing support cellular respiration in eukaryotic cells, what are the key inputs and outputs of this cellular process and where in the cell does it occur?",
+    solution: "In breathing, the body takes in oxygen during inhalation and releases carbon dioxide during exhalation. This is related to cellular respiration, which uses oxygen to make adenosine triphosphate (ATP), a form of short-term energy storage, and produces carbon dioxide as a byproduct. Thus, breathing provides the oxygen that the body’s cells need for cellular respiration and removes the carbon dioxide they produce as waste. In eukaryotic cells, cellular respiration occurs in the mitochondria."
+  }, {
+    question: "What is the importance of peroxisomes and how would their absence or reduction affect an organism?",
+    solution: "Peroxisomes carry out oxidation reactions that break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. (Many of these oxidation reactions release hydrogen peroxide, H2O2, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the H2O2 into oxygen and water.) For example, peroxisomes in liver cells detoxify alcohol. Their absence or reduction would lead to death of the organism."
+  }
+];
+
+export const QATopicsLLM = [
+  {
+    question: "What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.",
+    solution: "The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).",
+  },
+  {
+    question: "Describe the structure and function of ribosomes. How do they contribute to protein synthesis?",
+    solution: "Ribosomes are cellular structures responsible for protein synthesis. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their “orders” for protein synthesis from the nucleus where the DNA transcribes into messenger RNA (mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids, the building blocks of proteins.",
+  },
+  {
+    question: "Explain the role of mitochondria in a cell. Why are they often referred to as the ''powerhouses'' of cells?",
+    solution: "Mitochondria are often referred to as the ''powerhouses'' of cells because they make adenosine triphosphate (ATP), the cell’s main energy-carrying molecule. They are bean-shaped structures each with a double membrane. Cellular respiration, the process of making ATP using the chemical energy in glucose and other nutrients, occurs in mitochondria. This process uses oxygen and produces carbon dioxide as waste.",
+  },
+  {
+    question: "How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?",
+    solution: "The concentration of mitochondria in muscle cells is high because these cells need considerable energy to keep the body moving. Mitochondria produce ATP, the cell's main energy-carrying molecule. This is an example of ''form follows function'' as the high concentration of mitochondria (form) is directly related to the high energy requirement of muscle cells (function).",
+  },
+  {
+    question: "What are peroxisomes and what functions do they perform in a cell? How do they contribute to the detoxification process in the body?",
+    solution: "Peroxisomes are small, round organelles enclosed by single membranes that carry out oxidation reactions to break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. Many of these oxidation reactions release hydrogen peroxide, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the hydrogen peroxide into oxygen and water. For example, peroxisomes in liver cells detoxify alcohol.",
+  },
+];

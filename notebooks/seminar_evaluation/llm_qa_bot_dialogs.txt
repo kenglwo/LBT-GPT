@@ -1,0 +1,346 @@
+llm-qa-bot
+===========================================================
+0
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+Form follows function in the context of cell biology refers to  how the structure of cellular components is correlated with each component's respective purpose. For instance, muscle cells need a lot of energy, so they are composed of many mitochondria.
+Thank you for the response! As a reference, here is our model solution:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+
+
+===========================================================
+1
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+Cells contain organelles that enable them to more efficiently carry out their responsibilites
+This is a good start! You can take a look at our model solution:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+Ribosomes contain two subunits. An mRNA strand is fed between the two, and the ribosomes "translate" the date in the mRNA into amino acids. This contributes to protein synthesis since amino acids are the building blocks of protein.
+Thank you for the response! As a reference, here is our model solution:
+Ribosomes are cellular structures responsible for protein synthesis. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their “orders” for protein synthesis from the nucleus where the DNA transcribes into messenger RNA (mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids, the building blocks of proteins.
+Explain the role of mitochondria in a cell. Why are they often referred to as the ''powerhouses'' of cells?
+A mitochondrion is an organelle responsible for making ATP, which is the cell's source of energy. This is why they are referred to as "powerhouses of the cell"
+Thank you for the response! As a reference, here is our model solution:
+Mitochondria are often referred to as the ''powerhouses'' of cells because they make adenosine triphosphate (ATP), the cell’s main energy-carrying molecule. They are bean-shaped structures each with a double membrane. Cellular respiration, the process of making ATP using the chemical energy in glucose and other nutrients, occurs in mitochondria. This process uses oxygen and produces carbon dioxide as waste.
+How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?
+Muscle cells require the largest amounts of energy, so it only makes sense that muscle cells contain high concentrations of mitochondria
+Thank you for the response! As a reference, here is our model solution:
+The concentration of mitochondria in muscle cells is high because these cells need considerable energy to keep the body moving. Mitochondria produce ATP, the cell's main energy-carrying molecule. This is an example of ''form follows function'' as the high concentration of mitochondria (form) is directly related to the high energy requirement of muscle cells (function).
+What are peroxisomes and what functions do they perform in a cell? How do they contribute to the detoxification process in the body?
+Peroxisomes are small organelles that break down esters and amino acids. They produce H202 as a byproduct, but it is reduced to safer factors by enzymes in the cell. They play many roles in plants and animals, though plants have a wider variety of peroxisome types that enable them to defend against many different substances.
+Thank you for the response! As a reference, here is our model solution:
+Peroxisomes are small, round organelles enclosed by single membranes that carry out oxidation reactions to break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. Many of these oxidation reactions release hydrogen peroxide, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the hydrogen peroxide into oxygen and water. For example, peroxisomes in liver cells detoxify alcohol.
+Great job! You answered all the questions!
+
+
+===========================================================
+2
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+In this context it means that the structure of a cell relates to the function that the cell provides to the body.
+Thank you for the response! As a reference, here is our model solution:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+The ribosomes are structured to easily facilitate the mRNA traveling through them.
+Thank you for the response! As a reference, here is our model solution:
+Ribosomes are cellular structures responsible for protein synthesis. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their “orders” for protein synthesis from the nucleus where the DNA transcribes into messenger RNA (mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids, the building blocks of proteins.
+Explain the role of mitochondria in a cell. Why are they often referred to as the ''powerhouses'' of cells?
+They are called powerhouses because they make the cell's main energy carrying molecules.
+Thank you for the response! As a reference, here is our model solution:
+Mitochondria are often referred to as the ''powerhouses'' of cells because they make adenosine triphosphate (ATP), the cell’s main energy-carrying molecule. They are bean-shaped structures each with a double membrane. Cellular respiration, the process of making ATP using the chemical energy in glucose and other nutrients, occurs in mitochondria. This process uses oxygen and produces carbon dioxide as waste.
+How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?
+It is important that those cells have a high concentration of mitochondria to produce the needed ATP to keep the body moving.
+This is a great answer! Our model solution is:
+The concentration of mitochondria in muscle cells is high because these cells need considerable energy to keep the body moving. Mitochondria produce ATP, the cell's main energy-carrying molecule. This is an example of ''form follows function'' as the high concentration of mitochondria (form) is directly related to the high energy requirement of muscle cells (function).
+What are peroxisomes and what functions do they perform in a cell? How do they contribute to the detoxification process in the body?
+They are small round organelles enclosed by single membranes. They help break down things that would be toxic to the body.
+Thank you for the response! As a reference, here is our model solution:
+Peroxisomes are small, round organelles enclosed by single membranes that carry out oxidation reactions to break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. Many of these oxidation reactions release hydrogen peroxide, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the hydrogen peroxide into oxygen and water. For example, peroxisomes in liver cells detoxify alcohol.
+Great job! You answered all the questions!
+
+
+===========================================================
+3
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+
+
+===========================================================
+4
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+A police station should have an area where you can report crime and file reports.
+Thank you for the response! As a reference, here is our model solution:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+
+
+===========================================================
+5
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+Similar to how buildings are built to accommodate for their functions so does the cell.  This refers to cell components and organelles structures directly relating to their function. 
+Thank you for the response! As a reference, here is our model solution:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+By grouping together into polyribosomes or individual ribosomes, they receive orders from the nucleus for protein synthesis through mRNA.  This mRNA creates a codes that provide the sequence of synthesis.
+Thank you for the response! As a reference, here is our model solution:
+Ribosomes are cellular structures responsible for protein synthesis. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their “orders” for protein synthesis from the nucleus where the DNA transcribes into messenger RNA (mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids, the building blocks of proteins.
+Explain the role of mitochondria in a cell. Why are they often referred to as the ''powerhouses'' of cells?
+The mitochondria creates ATP, the cell's main module for energy carrying, representing the sort-term stored energy.  Through cellular respiration energy is created.
+This is a good start! You can take a look at our model solution:
+Mitochondria are often referred to as the ''powerhouses'' of cells because they make adenosine triphosphate (ATP), the cell’s main energy-carrying molecule. They are bean-shaped structures each with a double membrane. Cellular respiration, the process of making ATP using the chemical energy in glucose and other nutrients, occurs in mitochondria. This process uses oxygen and produces carbon dioxide as waste.
+How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?
+When cells don't receive enough oxygen then there is small amounts of ATP and produce lactic acid.  To combat this there is a higher concentration of mitochondria in muscles.
+Thank you for the response! As a reference, here is our model solution:
+The concentration of mitochondria in muscle cells is high because these cells need considerable energy to keep the body moving. Mitochondria produce ATP, the cell's main energy-carrying molecule. This is an example of ''form follows function'' as the high concentration of mitochondria (form) is directly related to the high energy requirement of muscle cells (function).
+What are peroxisomes and what functions do they perform in a cell? How do they contribute to the detoxification process in the body?
+They carry out oxidation reactions to break down fatty acids and amino acids as well as detoxify the body of poisons.  While the reaction creates hydrogen peroxide but they are contained within peroxisomes.
+Thank you for the response! As a reference, here is our model solution:
+Peroxisomes are small, round organelles enclosed by single membranes that carry out oxidation reactions to break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. Many of these oxidation reactions release hydrogen peroxide, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the hydrogen peroxide into oxygen and water. For example, peroxisomes in liver cells detoxify alcohol.
+Great job! You answered all the questions!
+
+
+===========================================================
+6
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+In cell biology, the phrase "form follows function" means that the shape and structure of parts of the body develop in a way that allows for the function of a particular system to be its most efficient self. For example, the abundance of ribosomes in the pancreas allows it to synthesize proteins at maximum efficiency. The formation of the pancreas and its huge number of ribosomes follows the function of protein synthesis.
+Thank you for the response! As a reference, here is our model solution:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+Ribosomes consist of two main units, a small and a large subunit. Together these units receive instructions from DNA in the form of messenger RNA or mRNA that includes instructions for the creation of amino acids. The amino acids form the base for necessary proteins. The structure of a ribosome is similar in form to a piece of the classic Halloween candy "candy corn" As mRNA passes between the large subunit (the orange part of the candy corn) and the small subunit (the white part of the candy corn) it imparts the necessary orders from the nucleus of the cell. Ribosome then takes the instructions and creates chains of amino acids in the particular sequence given by the mRNA, giving the cell the building blocks of necessary proteins. 
+This is a great answer! Our model solution is:
+Ribosomes are cellular structures responsible for protein synthesis. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their “orders” for protein synthesis from the nucleus where the DNA transcribes into messenger RNA (mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids, the building blocks of proteins.
+Explain the role of mitochondria in a cell. Why are they often referred to as the ''powerhouses'' of cells?
+Mitochondrion are cell structures that create adenosine triphosphate or ATP. ATP is stored energy made from glucose and other nutrients. Because ATP is created by the double-membraned and "bean-shaped" mitochondrion, it gets the nickname "the powerhouse of the cell". Mitochondria produce ATP by performing a process called cellular respiration which uses oxygen and produces carbon dioxide as a waste product. All of the muscles in the human body rely on energy to move and ultimately live, that energy comes from ATP produced in Mitochondria factories in our cells.
+Thank you for the response! As a reference, here is our model solution:
+Mitochondria are often referred to as the ''powerhouses'' of cells because they make adenosine triphosphate (ATP), the cell’s main energy-carrying molecule. They are bean-shaped structures each with a double membrane. Cellular respiration, the process of making ATP using the chemical energy in glucose and other nutrients, occurs in mitochondria. This process uses oxygen and produces carbon dioxide as waste.
+How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?
+Muscles require ATP to give them the energy necessary to move and operate integral systems in the body. Everything from lifting a glass to drink from it, to pumping your heart requires ATP. The concentration of mitochondria in muscle tissues is the form that follows the function of producing energy in the form of ATP.
+Thank you for the response! As a reference, here is our model solution:
+The concentration of mitochondria in muscle cells is high because these cells need considerable energy to keep the body moving. Mitochondria produce ATP, the cell's main energy-carrying molecule. This is an example of ''form follows function'' as the high concentration of mitochondria (form) is directly related to the high energy requirement of muscle cells (function).
+What are peroxisomes and what functions do they perform in a cell? How do they contribute to the detoxification process in the body?
+Peroxisomes are single-membraned organelles that perform oxidation reactions. These reactions break down amino acids and fatty acids. Peroxisomes also detoxify poisons that may have entered the body. In these cases, if the poisons are able to be confined within peroxisomes, the peroxisomes will break the poisons down into hydrogen peroxide. While, hydrogen peroxide may be damaging to cells, if the breakdown happens within the peroxisomes, the h202 is broken down even further into harmless oxygen and water.
+Thank you for the response! As a reference, here is our model solution:
+Peroxisomes are small, round organelles enclosed by single membranes that carry out oxidation reactions to break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. Many of these oxidation reactions release hydrogen peroxide, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the hydrogen peroxide into oxygen and water. For example, peroxisomes in liver cells detoxify alcohol.
+Great job! You answered all the questions!
+
+
+===========================================================
+7
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+It means constructing something to support the activity within cells. An example is ribosomes, which house many other elements in the body. 
+Sorry, that's not quite right. You might want to refer to the lesson or our model solution:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+Ribosomes are the cellular structures responsible for protein synthesis. They may group together into clusters or individual ribosomes may float freely in the cytoplasm. They may be attached to the plasma membrane's cytoplasmic side or the endoplasic reticulum's cyptplasmic side and the nuclear envelope's outer membrane. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their orders for protein synthesis from the nucleus where the DNA transcribes into messenger RNA. 
+This is a great answer! Our model solution is:
+Ribosomes are cellular structures responsible for protein synthesis. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their “orders” for protein synthesis from the nucleus where the DNA transcribes into messenger RNA (mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids, the building blocks of proteins.
+Explain the role of mitochondria in a cell. Why are they often referred to as the ''powerhouses'' of cells?
+Mitochondria involves making ATP using chemical energy in glucose and other nutrients. They are called powerhouse cells because they make adenosine triphosphate, the cell's main energy carrying molecule. 
+Thank you for the response! As a reference, here is our model solution:
+Mitochondria are often referred to as the ''powerhouses'' of cells because they make adenosine triphosphate (ATP), the cell’s main energy-carrying molecule. They are bean-shaped structures each with a double membrane. Cellular respiration, the process of making ATP using the chemical energy in glucose and other nutrients, occurs in mitochondria. This process uses oxygen and produces carbon dioxide as waste.
+How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?
+Your muscle cells need condiderable energy to keep your body moving. When your cells don't get enough oxygen, they make small amount of ATP and also produce lactic acid.
+Thank you for the response! As a reference, here is our model solution:
+The concentration of mitochondria in muscle cells is high because these cells need considerable energy to keep the body moving. Mitochondria produce ATP, the cell's main energy-carrying molecule. This is an example of ''form follows function'' as the high concentration of mitochondria (form) is directly related to the high energy requirement of muscle cells (function).
+What are peroxisomes and what functions do they perform in a cell? How do they contribute to the detoxification process in the body?
+Peroxisomes are small, round organelles enclosed by single membranes. They carry out oxidation reactions that break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. 
+Thank you for the response! As a reference, here is our model solution:
+Peroxisomes are small, round organelles enclosed by single membranes that carry out oxidation reactions to break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. Many of these oxidation reactions release hydrogen peroxide, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the hydrogen peroxide into oxygen and water. For example, peroxisomes in liver cells detoxify alcohol.
+Great job! You answered all the questions!
+
+
+===========================================================
+8
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+the structure of cell components are directly related to their function. the form (high number of ribosomes) follows the function (protien synthesis).
+Thank you for the response! As a reference, here is our model solution:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+they group together into clusters or individual ribosomes may float freely in the cytop[lasm. 
+Thank you for the response! As a reference, here is our model solution:
+Ribosomes are cellular structures responsible for protein synthesis. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their “orders” for protein synthesis from the nucleus where the DNA transcribes into messenger RNA (mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids, the building blocks of proteins.
+Explain the role of mitochondria in a cell. Why are they often referred to as the ''powerhouses'' of cells?
+they make the cells main energy carrying molecule. 
+Thank you for the response! As a reference, here is our model solution:
+Mitochondria are often referred to as the ''powerhouses'' of cells because they make adenosine triphosphate (ATP), the cell’s main energy-carrying molecule. They are bean-shaped structures each with a double membrane. Cellular respiration, the process of making ATP using the chemical energy in glucose and other nutrients, occurs in mitochondria. This process uses oxygen and produces carbon dioxide as waste.
+How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?
+your muscle cells have alot of mitochondria, and they need it to keep our body moving.
+Thank you for the response! As a reference, here is our model solution:
+The concentration of mitochondria in muscle cells is high because these cells need considerable energy to keep the body moving. Mitochondria produce ATP, the cell's main energy-carrying molecule. This is an example of ''form follows function'' as the high concentration of mitochondria (form) is directly related to the high energy requirement of muscle cells (function).
+What are peroxisomes and what functions do they perform in a cell? How do they contribute to the detoxification process in the body?
+small round organelles enclosed by A SINGLE MEMBRANE.  when in livers cells they detoxify alchohol.
+Thank you for the response! As a reference, here is our model solution:
+Peroxisomes are small, round organelles enclosed by single membranes that carry out oxidation reactions to break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. Many of these oxidation reactions release hydrogen peroxide, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the hydrogen peroxide into oxygen and water. For example, peroxisomes in liver cells detoxify alcohol.
+Great job! You answered all the questions!
+
+
+===========================================================
+9
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+In the context of cell biology, form follows function means that the form of a specific thing relates the to the function that that that thing does. The example given in the reading is that there are a LOT of ribosomes in eukaryotic cells because their purpose is to synthesize a lot of protein, so there has to be a lot of ribosomes.
+This is a great answer! Our model solution is:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+Ribosomes consist of a large top on top of a small bottom. Their function is to synthesize proteins. They do this by forming proteins out of amino acids after receiving information from the nucleus via mRNA.
+Thank you for the response! As a reference, here is our model solution:
+Ribosomes are cellular structures responsible for protein synthesis. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their “orders” for protein synthesis from the nucleus where the DNA transcribes into messenger RNA (mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids, the building blocks of proteins.
+Explain the role of mitochondria in a cell. Why are they often referred to as the ''powerhouses'' of cells?
+Mitochondria create ATP, which is the molecule responsible for carrying energy throughout the cell (which, incidentally, is why mitochondria are known as cell powerhouses). 
+Thank you for the response! As a reference, here is our model solution:
+Mitochondria are often referred to as the ''powerhouses'' of cells because they make adenosine triphosphate (ATP), the cell’s main energy-carrying molecule. They are bean-shaped structures each with a double membrane. Cellular respiration, the process of making ATP using the chemical energy in glucose and other nutrients, occurs in mitochondria. This process uses oxygen and produces carbon dioxide as waste.
+How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?
+Because a lot of ATP is required in muscles, and the function of mitochondria is to create ATP, it follows that there are a LOT of mitochondria in the muscle cells, as this form (a heavy concentration) follows the function and need of the cells.
+Thank you for the response! As a reference, here is our model solution:
+The concentration of mitochondria in muscle cells is high because these cells need considerable energy to keep the body moving. Mitochondria produce ATP, the cell's main energy-carrying molecule. This is an example of ''form follows function'' as the high concentration of mitochondria (form) is directly related to the high energy requirement of muscle cells (function).
+What are peroxisomes and what functions do they perform in a cell? How do they contribute to the detoxification process in the body?
+Peroxisomes are small, round, single-membraned organelles. They carry out oxidation reactions that break down fatty acids and amino acids and they detoxify poisons. Some specialized peroxisomes convert stores fats into sugars. Peroxisomes in liver cells detoxify alcohol.
+Thank you for the response! As a reference, here is our model solution:
+Peroxisomes are small, round organelles enclosed by single membranes that carry out oxidation reactions to break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. Many of these oxidation reactions release hydrogen peroxide, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the hydrogen peroxide into oxygen and water. For example, peroxisomes in liver cells detoxify alcohol.
+Great job! You answered all the questions!
+
+
+===========================================================
+10
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+IT means that something should be constructed in a manner that supports the functionality occurring inside of it.
+Thank you for the response! As a reference, here is our model solution:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+RIbosomes may group together in clusters or float freely on cytoplasma,  They are large protein and RNA completes, consisits of a large and small subunits.   They receive orders for protein synsthesis from the Nucleus.
+Thank you for the response! As a reference, here is our model solution:
+Ribosomes are cellular structures responsible for protein synthesis. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their “orders” for protein synthesis from the nucleus where the DNA transcribes into messenger RNA (mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids, the building blocks of proteins.
+Explain the role of mitochondria in a cell. Why are they often referred to as the ''powerhouses'' of cells?
+They make adensonine triphosphate, ATP, an energy carrying molecule.
+Thank you for the response! As a reference, here is our model solution:
+Mitochondria are often referred to as the ''powerhouses'' of cells because they make adenosine triphosphate (ATP), the cell’s main energy-carrying molecule. They are bean-shaped structures each with a double membrane. Cellular respiration, the process of making ATP using the chemical energy in glucose and other nutrients, occurs in mitochondria. This process uses oxygen and produces carbon dioxide as waste.
+How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?
+Muscles require energy, and Mitochondria uses oxygen to create that energy, and discards of the waste by producing carbon dixoide.
+This is a good start! You can take a look at our model solution:
+The concentration of mitochondria in muscle cells is high because these cells need considerable energy to keep the body moving. Mitochondria produce ATP, the cell's main energy-carrying molecule. This is an example of ''form follows function'' as the high concentration of mitochondria (form) is directly related to the high energy requirement of muscle cells (function).
+What are peroxisomes and what functions do they perform in a cell? How do they contribute to the detoxification process in the body?
+Small round organelles enclosed by a single membrane.  They break down fatty acids and amino acids, providing oxidation.
+Thank you for the response! As a reference, here is our model solution:
+Peroxisomes are small, round organelles enclosed by single membranes that carry out oxidation reactions to break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. Many of these oxidation reactions release hydrogen peroxide, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the hydrogen peroxide into oxygen and water. For example, peroxisomes in liver cells detoxify alcohol.
+Great job! You answered all the questions!
+
+
+===========================================================
+11
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+The structure of cell components and organelles is directly related ot their function. An example would be ribosomes, an organelles responsible for protein synthesis, are found in high numbers in eukaryotic cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Her the form (high number of ribosomes) follows the function I(protein synthesis) but there are other compartments in cells that hold every thing our body need or does,
+This is a great answer! Our model solution is:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+Ribosomes may group together into clusters (polyribosomes) or individual ribosomes may float freely in the cytoplasm. 
+Thank you for the response! As a reference, here is our model solution:
+Ribosomes are cellular structures responsible for protein synthesis. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their “orders” for protein synthesis from the nucleus where the DNA transcribes into messenger RNA (mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids, the building blocks of proteins.
+Explain the role of mitochondria in a cell. Why are they often referred to as the ''powerhouses'' of cells?
+They are called powerhouses because they are bean-shaped structures each with a double membrane and they make adenosine triphosphate (ATP), the cell's main energy-carrying molecule ATP represents the cell's short term stored energy.
+Thank you for the response! As a reference, here is our model solution:
+Mitochondria are often referred to as the ''powerhouses'' of cells because they make adenosine triphosphate (ATP), the cell’s main energy-carrying molecule. They are bean-shaped structures each with a double membrane. Cellular respiration, the process of making ATP using the chemical energy in glucose and other nutrients, occurs in mitochondria. This process uses oxygen and produces carbon dioxide as waste.
+How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?
+Muscle cells have a very high concentratoin fo mitochondria that produce ATP. Muscle cells need considerable energy to keep the body moving. When cells don't get enough oxyge, they make small amounts of ATP and also produce lactic acid,
+Thank you for the response! As a reference, here is our model solution:
+The concentration of mitochondria in muscle cells is high because these cells need considerable energy to keep the body moving. Mitochondria produce ATP, the cell's main energy-carrying molecule. This is an example of ''form follows function'' as the high concentration of mitochondria (form) is directly related to the high energy requirement of muscle cells (function).
+What are peroxisomes and what functions do they perform in a cell? How do they contribute to the detoxification process in the body?
+Peroxisomes are small, rond organelles enclosed by single membranes. They carrou out oxidation reactions that break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. Many of these oxidation reactions release hydrogen peroxide, H202, which wuld be damaging to cells; however, when the reactions are confined to peroxisomes, enzymes safely break down the H202 into oxygen and water. Such as the peroxisomes in the liver cells detoxify alcohol,
+This is a great answer! Our model solution is:
+Peroxisomes are small, round organelles enclosed by single membranes that carry out oxidation reactions to break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. Many of these oxidation reactions release hydrogen peroxide, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the hydrogen peroxide into oxygen and water. For example, peroxisomes in liver cells detoxify alcohol.
+Great job! You answered all the questions!
+
+
+===========================================================
+12
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+Form follows function refers in cell biology refers to different parts of the cell all working together to complete a function. That all parts even though  separated are all housed together in the same unit.
+Thank you for the response! As a reference, here is our model solution:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+Ribosomes receive the orders to create protein synthesis from the nucleus where the DNA transcribes into messenger RNA(mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids linked together. Amino acids are the building blocks of proteins. 
+Thank you for the response! As a reference, here is our model solution:
+Ribosomes are cellular structures responsible for protein synthesis. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their “orders” for protein synthesis from the nucleus where the DNA transcribes into messenger RNA (mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids, the building blocks of proteins.
+Explain the role of mitochondria in a cell. Why are they often referred to as the ''powerhouses'' of cells?
+Because they make adenosine triphosphate (ATP), the cell's main energy-carrying molecule. 
+Thank you for the response! As a reference, here is our model solution:
+Mitochondria are often referred to as the ''powerhouses'' of cells because they make adenosine triphosphate (ATP), the cell’s main energy-carrying molecule. They are bean-shaped structures each with a double membrane. Cellular respiration, the process of making ATP using the chemical energy in glucose and other nutrients, occurs in mitochondria. This process uses oxygen and produces carbon dioxide as waste.
+How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?
+Because when looking at how our muscle cells work we need considerable energy to keep out body movie and our muscles are packed with mitochondria, the "energy" cells. 
+Thank you for the response! As a reference, here is our model solution:
+The concentration of mitochondria in muscle cells is high because these cells need considerable energy to keep the body moving. Mitochondria produce ATP, the cell's main energy-carrying molecule. This is an example of ''form follows function'' as the high concentration of mitochondria (form) is directly related to the high energy requirement of muscle cells (function).
+What are peroxisomes and what functions do they perform in a cell? How do they contribute to the detoxification process in the body?
+Peroxisomes are small, round organelles enclosed by single membranes. They carry out oxidation reactions that break down fatty acids and amino acids. They detoxify many poisons that may enter the body. 
+Thank you for the response! As a reference, here is our model solution:
+Peroxisomes are small, round organelles enclosed by single membranes that carry out oxidation reactions to break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. Many of these oxidation reactions release hydrogen peroxide, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the hydrogen peroxide into oxygen and water. For example, peroxisomes in liver cells detoxify alcohol.
+Great job! You answered all the questions!
+
+
+===========================================================
+13
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+define organelles 
+Sorry, that's not quite right. You might want to refer to the lesson or our model solution:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+They receive orders for protein synthesis from the nucleus. They can be grouped together or be found individually. 
+This is a good start! You can take a look at our model solution:
+Ribosomes are cellular structures responsible for protein synthesis. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their “orders” for protein synthesis from the nucleus where the DNA transcribes into messenger RNA (mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids, the building blocks of proteins.
+Explain the role of mitochondria in a cell. Why are they often referred to as the ''powerhouses'' of cells?
+they make the cell's main energy-carrying molecule. 
+This is a good start! You can take a look at our model solution:
+Mitochondria are often referred to as the ''powerhouses'' of cells because they make adenosine triphosphate (ATP), the cell’s main energy-carrying molecule. They are bean-shaped structures each with a double membrane. Cellular respiration, the process of making ATP using the chemical energy in glucose and other nutrients, occurs in mitochondria. This process uses oxygen and produces carbon dioxide as waste.
+How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?
+Muscle cells require a lot of energy to function so they require a high concentration of mitochondria.
+Thank you for the response! As a reference, here is our model solution:
+The concentration of mitochondria in muscle cells is high because these cells need considerable energy to keep the body moving. Mitochondria produce ATP, the cell's main energy-carrying molecule. This is an example of ''form follows function'' as the high concentration of mitochondria (form) is directly related to the high energy requirement of muscle cells (function).
+What are peroxisomes and what functions do they perform in a cell? How do they contribute to the detoxification process in the body?
+They are small, round organelles enclosed by single membranes. They carry out oxidation reactions that break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. The enzymes they produce break down harmful toxins. 
+Thank you for the response! As a reference, here is our model solution:
+Peroxisomes are small, round organelles enclosed by single membranes that carry out oxidation reactions to break down fatty acids and amino acids. They also detoxify many poisons that may enter the body. Many of these oxidation reactions release hydrogen peroxide, which would be damaging to cells; however, when these reactions are confined to peroxisomes, enzymes safely break down the hydrogen peroxide into oxygen and water. For example, peroxisomes in liver cells detoxify alcohol.
+Great job! You answered all the questions!
+
+
+===========================================================
+14
+===========================================================
+Nice to meet you! I am Ruffle. I can help you reflect on the material.
+What does the phrase ''form follows function'' mean in the context of cell biology? Provide an example to illustrate your answer.
+Buildings should be constructed to support the activities housed within them. For example, a skyscraper should include several elevator banks.
+Thank you for the response! As a reference, here is our model solution:
+The phrase ''form follows function'' in cell biology means that the structure of cell components and organelles is directly related to their function. For instance, ribosomes, which are responsible for protein synthesis, are found in high numbers in cells that synthesize large amounts of protein, such as those in the pancreas that produce digestive enzymes. Here, the form (high number of ribosomes) follows the function (protein synthesis).
+Describe the structure and function of ribosomes. How do they contribute to protein synthesis?
+They're clusters. they receive orders for protein synthesis from the nucleus.
+Thank you for the response! As a reference, here is our model solution:
+Ribosomes are cellular structures responsible for protein synthesis. They are large protein and RNA complexes, each consisting of two subunits, large and small. Ribosomes receive their “orders” for protein synthesis from the nucleus where the DNA transcribes into messenger RNA (mRNA). The mRNA travels to the ribosomes, which translate the code provided by the sequence of the nitrogenous bases in the mRNA into a specific order of amino acids, the building blocks of proteins.
+Explain the role of mitochondria in a cell. Why are they often referred to as the ''powerhouses'' of cells?
+The mitochondria makes ATP, which is the cell's main energy carrying molecule.
+Thank you for the response! As a reference, here is our model solution:
+Mitochondria are often referred to as the ''powerhouses'' of cells because they make adenosine triphosphate (ATP), the cell’s main energy-carrying molecule. They are bean-shaped structures each with a double membrane. Cellular respiration, the process of making ATP using the chemical energy in glucose and other nutrients, occurs in mitochondria. This process uses oxygen and produces carbon dioxide as waste.
+How does the concentration of mitochondria in muscle cells relate to the principle of ''form follows function''?
+
+

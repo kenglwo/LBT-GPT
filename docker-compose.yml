@@ -1,0 +1,47 @@
+version: "3.8"
+
+volumes:
+  hoge:
+  zixin_db:
+
+services:
+  frontend:
+    container_name: LBT-GPT
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/frontend
+      - hoge:/frontend/node_modules
+    working_dir: /frontend
+    ports:
+      - 3000:3000
+    tty: true
+    stdin_open: true
+    # command: sh -c "cd frontend && yarn dev"
+  # backend:
+  #   container_name: backend
+  #   build: ./backend
+  #   ports:
+  #     - 3002:3002
+  #   volumes:
+  #     - ./backend:/backend
+  #   tty: true
+  #   depends_on:
+  #     - db
+  #   stdin_open: true
+  #   platform: linux/x86_64
+  #   # command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3002 -b '0.0.0.0'"
+  # db:
+  #   container_name: mimamori_db
+  #   build: ./postgres
+  #   volumes:
+  #    - zixin_db:/var/lib/postgresql/data
+  #   environment:
+  #     POSTGRES_DB: postgres
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: x3Ad6kCi
+  #   ports:
+  #   - 5433:5432
+  #   tty: true
+  #   stdin_open: true

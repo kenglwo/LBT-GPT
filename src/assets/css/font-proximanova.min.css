@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "ProximaNova";
+  src: local("../src/assets/fonts/italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  -webkit-font-smoothing: antialiased;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: local("../src/assets/fonts/bold_italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  -webkit-font-smoothing: antialiased;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: local("../src/assets/fonts/regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: local("../src/assets/fonts/bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: local("../src/assets/fonts/semi_bold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ProximaNovaA-Semibold";
+  src: local("../src/assets/fonts/alt_semi_bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ProximaNova-Semibold";
+  src: local("../src/assets/fonts/semi_bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-display: swap;
+}
