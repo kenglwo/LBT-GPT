@@ -2,6 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Unstable_Grid2'
 import ChatGPTInterface from './ChatGPTInterface'
+import QuestionForm from './QuestionForm'
 
 export default function VisTestIndex () {
   return (
@@ -11,7 +12,7 @@ export default function VisTestIndex () {
           <ChatGPTInterface />
         </Grid>
         <Grid xs={8}>
-          <div>xs=8</div>
+          <QuestionForm />
         </Grid>
       </Grid>
     </Box>
