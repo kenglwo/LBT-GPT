@@ -1,9 +1,20 @@
-import React from 'react'
+import { React, useState, useEffect } from 'react'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 
 export default function ChatGPTInterface () {
+  const [studentInputPrompt, setStudentInputPrompt] = useState('')
+
+  const onChangeStudentInputPrompt = inputText => {
+    setStudentInputPrompt(inputText)
+  }
+
+  const onClickSubmit = () => {
+    console.log(studentInputPrompt)
+  }
+
+  useEffect(() => {}, [studentInputPrompt])
   return (
     <>
       <Box
@@ -28,8 +39,11 @@ export default function ChatGPTInterface () {
         multiline
         rows={2}
         placeholder='Enter your question here'
+        onChange={e => {
+          onChangeStudentInputPrompt(e.target.value)
+        }}
       />
-      <Button variant='contained' sx={{ ml: 2, mt: 1 }}>
+      <Button variant='contained' sx={{ ml: 2, mt: 1 }} onClick={onClickSubmit}>
         Send
       </Button>
     </>
