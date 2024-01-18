@@ -44,6 +44,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: x3Ad6kCi
     ports:
-    - 5433:5432
+    - 5432:5432
     tty: true
     stdin_open: true
