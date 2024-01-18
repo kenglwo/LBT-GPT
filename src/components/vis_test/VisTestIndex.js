@@ -18,13 +18,39 @@ export default function VisTestIndex () {
   }
 
   useEffect(() => {
-    console.log('=============')
-    console.log(answerDataParent)
+    if (answerDataParent.length > 0) {
+      const url = `${process.env.REACT_APP_API_URL}/save_student_data`
+      const method = 'POST'
+      const headers = {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
+      const studentId = document.querySelector('#student_id').value
+      const body = {
+        data_id: 'answer_data',
+        student_id: studentId,
+        data: answerDataParent
+      }
+      console.log(body)
+      const bodyJSON = JSON.stringify(body)
+      console.log(bodyJSON)
+
+      fetch(url, { method: method, headers: headers, body: bodyJSON })
+        .then(res => res.json())
+        .then(result => {
+          if (result.status === 'success') {
+            //
+          } else {
+            //
+          }
+        })
+        .catch(console.error)
+    }
   }, [answerDataParent])
 
   useEffect(() => {
-    console.log('=============')
-    console.log(conversationDataParent)
+    // console.log('=============')
+    // console.log(conversationDataParent)
   }, [conversationDataParent])
 
   return (

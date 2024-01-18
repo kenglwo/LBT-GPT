@@ -14,18 +14,7 @@ export default function QuestionForm (props) {
 
   const handleStudentAnswerArray = array => {
     try {
-      // const now = new Date()
-      // const timestamp = `${now.getFullYear()}-${
-      //   now.getMonth() + 1
-      // }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
       setStudentAnswerArrayParent(array)
-      // const answerData = {
-      //   studentId: studentId,
-      //   studentName: studentName,
-      //   answerArray: array,
-      //   timestmap: timestamp
-      // }
-      // console.log(answerData)
       setAnswerSubmissionStatus('success')
     } catch (error) {
       setAnswerSubmissionStatus('error')
@@ -49,7 +38,7 @@ export default function QuestionForm (props) {
         <span>Name: </span>
         <TextField
           sx={{ width: '200px', ml: 2, mt: 2 }}
-          id=''
+          id='student_name'
           rows={1}
           placeholder=''
           onChange={e => {
@@ -61,7 +50,7 @@ export default function QuestionForm (props) {
         <span>Student ID: </span>
         <TextField
           sx={{ width: '200px', ml: 2, mt: 2 }}
-          id=''
+          id='student_id'
           rows={1}
           placeholder=''
           onChange={e => {
