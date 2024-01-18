@@ -24,8 +24,16 @@ class ApiController < ApplicationController
             end
 
         elsif data_id == 'conversation_data' then
-
+            role = data[:role]
+            prompt = data[:prompt]
+            new_data = ConversationDatum.new(student_id: student_id, role: role, prompt: prompt)
+            if new_data.save
+                api_status = "success"
+            else
+                api_status = "failed"
+            end
         end
+
         render json: {"status": api_status}
     end
 end
