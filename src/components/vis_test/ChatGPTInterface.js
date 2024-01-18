@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
+import { sendChatToGPT } from './chatpgt_api'
 
 export default function ChatGPTInterface () {
   const [studentInputPrompt, setStudentInputPrompt] = useState('')
@@ -10,8 +11,10 @@ export default function ChatGPTInterface () {
     setStudentInputPrompt(inputText)
   }
 
-  const onClickSubmit = () => {
+  const onClickSubmit = async () => {
     console.log(studentInputPrompt)
+    const llmAnswer = await sendChatToGPT('tell me a joke')
+    console.log(llmAnswer)
   }
 
   useEffect(() => {}, [studentInputPrompt])
