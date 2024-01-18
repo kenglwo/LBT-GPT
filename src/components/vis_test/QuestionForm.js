@@ -4,8 +4,7 @@ import Alert from '@mui/material/Alert'
 import TextField from '@mui/material/TextField'
 import Test1 from './tests/Test1'
 
-export default function QuestionForm () {
-  const [studentAnswerData, setStudentAnswerData] = useState([])
+export default function QuestionForm (props) {
   const [studentAnswerArrayParent, setStudentAnswerArrayParent] = useState([])
   const [answerSubmissionStatus, setAnswerSubmissionStatus] = useState([
     'not yet'
@@ -15,18 +14,18 @@ export default function QuestionForm () {
 
   const handleStudentAnswerArray = array => {
     try {
-      const now = new Date()
-      const timestamp = `${now.getFullYear()}-${
-        now.getMonth() + 1
-      }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+      // const now = new Date()
+      // const timestamp = `${now.getFullYear()}-${
+      //   now.getMonth() + 1
+      // }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
       setStudentAnswerArrayParent(array)
-      const answerData = {
-        studentId: studentId,
-        studentName: studentName,
-        answerArray: array,
-        timestmap: timestamp
-      }
-      console.log(answerData)
+      // const answerData = {
+      //   studentId: studentId,
+      //   studentName: studentName,
+      //   answerArray: array,
+      //   timestmap: timestamp
+      // }
+      // console.log(answerData)
       setAnswerSubmissionStatus('success')
     } catch (error) {
       setAnswerSubmissionStatus('error')
@@ -41,6 +40,9 @@ export default function QuestionForm () {
     setStudentId(id)
   }
 
+  useEffect(() => {
+    props.setAnswerDataParent(studentAnswerArrayParent)
+  }, [studentAnswerArrayParent])
   return (
     <>
       <Box sx={{ display: 'flex', alignItems: 'center', mr: 4, float: 'left' }}>
