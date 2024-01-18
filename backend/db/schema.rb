@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_01_18_082455) do
+ActiveRecord::Schema.define(version: 2024_01_18_092620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2024_01_18_082455) do
     t.string "student_id"
     t.string "question_id"
     t.text "answer"
-    t.datetime "timestamp"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -28,7 +27,6 @@ ActiveRecord::Schema.define(version: 2024_01_18_082455) do
     t.string "student_id"
     t.string "role"
     t.text "prompt"
-    t.datetime "timestamp"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
