@@ -1,0 +1,2 @@
+class AnswerDatum < ApplicationRecord
+end

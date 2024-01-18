@@ -6,7 +6,7 @@ import Avatar from '@mui/material/Avatar'
 import Stack from '@mui/material/Stack'
 import { sendChatToGPT } from './chatpgt_api'
 
-export default function ChatGPTInterface () {
+export default function ChatGPTInterface (props) {
   const [studentInputPrompt, setStudentInputPrompt] = useState('')
   const [conversationData, setConversationData] = useState([])
 
@@ -17,7 +17,7 @@ export default function ChatGPTInterface () {
   const conversationContainers = conversationData.map((conversation, i) => {
     if (conversation.role === 'student') {
       return (
-        <Box key={i} class='student_question_container' sx={{ mt: 4 }}>
+        <Box key={i} className='student_question_container' sx={{ mt: 4 }}>
           <Stack
             direction='row'
             spacing={2}
@@ -38,7 +38,7 @@ export default function ChatGPTInterface () {
       )
     } else if (conversation.role === 'chatgpt') {
       return (
-        <Box key={i} class='llm_answer_container' sx={{ mt: 4 }}>
+        <Box key={i} className='llm_answer_container' sx={{ mt: 4 }}>
           <Stack
             direction='row'
             spacing={2}
@@ -89,11 +89,10 @@ export default function ChatGPTInterface () {
       timestamp: timestamp2
     }
     setConversationData(currentData => [...currentData, conversationDataLLM])
-    // console.log(llmAnswer)
   }
 
   useEffect(() => {
-    // if (conversationData.role === 'student')
+    props.setConversationDataParent(conversationData)
   }, [conversationData])
   return (
     <>

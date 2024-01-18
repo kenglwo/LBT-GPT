@@ -54,7 +54,7 @@ export default function Test1 (props) {
         http://vis.cse.ust.hk/pqeDefenceVis/
       </a>
       <Box sx={{ m: 3 }}>
-        <strong class='question_text'>
+        <strong className='question_text'>
           1. In the main view, what does the color encode? Do you agree with the
           color scheme used? What are your suggestions?
         </strong>
@@ -70,7 +70,7 @@ export default function Test1 (props) {
         />
       </Box>
       <Box sx={{ m: 3 }}>
-        <strong class='question_text'>
+        <strong className='question_text'>
           2.1 In the supervisor view, what does the color encode?
         </strong>
         <TextField
@@ -85,7 +85,7 @@ export default function Test1 (props) {
         />
       </Box>
       <Box sx={{ m: 3 }}>
-        <strong class='question_text'>
+        <strong className='question_text'>
           2.2 If we want to use the color to encode the number of PG students
           graduated by each supervisor, please suggest a color map.
         </strong>
@@ -101,7 +101,7 @@ export default function Test1 (props) {
         />
       </Box>
       <Box sx={{ m: 3 }}>
-        <strong class='question_text'>
+        <strong className='question_text'>
           2.3 If we want to use the color to encode the research area of
           supervisors, please suggest a color map.
         </strong>
@@ -117,7 +117,7 @@ export default function Test1 (props) {
         />
       </Box>
       <Box sx={{ m: 3 }}>
-        <strong class='question_text'>
+        <strong className='question_text'>
           3. If the two views use colors to encode totally different things,
           will it cause any problems to users? How to avoid these problems?
         </strong>
