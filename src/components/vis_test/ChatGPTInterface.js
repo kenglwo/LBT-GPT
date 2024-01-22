@@ -1,99 +1,103 @@
-import { React, useState, useEffect } from 'react'
-import Box from '@mui/material/Box'
-import TextField from '@mui/material/TextField'
-import Button from '@mui/material/Button'
-import Avatar from '@mui/material/Avatar'
-import Stack from '@mui/material/Stack'
-import { sendChatToGPT } from './chatpgt_api'
+import React, { useState, useEffect } from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import { sendChatToGPT } from './chatpgt_api';
 
-export default function ChatGPTInterface (props) {
-  const [studentInputPrompt, setStudentInputPrompt] = useState('')
-  const [conversationData, setConversationData] = useState([])
+export default function ChatGPTInterface(props) {
+  const [studentInputPrompt, setStudentInputPrompt] = useState('');
+  const [conversationData, setConversationData] = useState([]);
+  const [uploadedFile, setUploadedFile] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const onChangeStudentInputPrompt = inputText => {
-    setStudentInputPrompt(inputText)
-  }
-
-  const conversationContainers = conversationData.map((conversation, i) => {
-    if (conversation.role === 'student') {
-      return (
-        <Box key={i} className='student_question_container' sx={{ mt: 4 }}>
-          <Stack
-            direction='row'
-            spacing={2}
-            sx={{ display: 'flex', alignItems: 'center' }}
-          >
-            <Avatar alt='Remy Sharp' src='/images/user.png' />
-            <h3>You</h3>
-          </Stack>
-          <Box
-            sx={{
-              m: 2,
-              textAlign: 'left'
-            }}
-          >
-            <p>{conversation.prompt}</p>
-          </Box>
-        </Box>
-      )
-    } else if (conversation.role === 'chatgpt') {
-      return (
-        <Box key={i} className='llm_answer_container' sx={{ mt: 4 }}>
-          <Stack
-            direction='row'
-            spacing={2}
-            sx={{ display: 'flex', alignItems: 'center' }}
-          >
-            <Avatar alt='Remy Sharp' src='/images/student.jpeg' />
-            <h3>ChatGPT</h3>
-          </Stack>
-          <Box
-            sx={{
-              m: 2,
-              textAlign: 'left'
-            }}
-          >
-            <p>{conversation.prompt}</p>
-          </Box>
-        </Box>
-      )
-    } else {
-      return <div />
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setUploadedFile(reader.result); // base 64 to save the file
+      };
+      reader.readAsDataURL(file); // read the file via url
     }
-  })
+  };
+
 
   const onClickSubmit = async () => {
-    const now = new Date()
-    const timestamp = `${now.getFullYear()}-${
-      now.getMonth() + 1
-    }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+    const now = new Date();
+    const timestamp = `${now.getFullYear()}-${now.getMonth() + 1
+      }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+
+
+
+    // to store the current text input, since we want to clear the input field after sending the message
+    let currentTextInput = studentInputPrompt
+
     const conversationDataStudent = {
-      role: 'student',
-      prompt: studentInputPrompt,
-      timestamp: timestamp
+      role: 'user',
+      type: 'text',
+      content: currentTextInput,
+      timestamp: timestamp,
+    };
+
+
+    let newConversationEntries = [conversationDataStudent]; // 初始化新对话条目数组
+
+    setIsLoading(true); // start to load
+
+    // Assume sendChatToGPT can handle both text and file inputs
+    // need to add a timestamp to llmAnswer
+
+    // clear the input field
+    setStudentInputPrompt('');
+    document.getElementById('fileInput').value = '';
+
+    const llmAnswer = await sendChatToGPT(conversationData, currentTextInput, uploadedFile);
+
+    setIsLoading(false); // finish loading
+
+    
+
+    // update the conversation log with the LLM's answer
+    const llmAnswerData = {
+      role: 'assistant',
+      content: llmAnswer,
+      type: 'text'
     }
-    setConversationData(currentData => [
-      ...currentData,
-      conversationDataStudent
-    ])
 
-    const llmAnswer = await sendChatToGPT(studentInputPrompt)
+    // if has uploaded file, add it to the conversation data. Otherwise, just add the student's question and llm's answer
+    if (uploadedFile) {
+      const conversationDataFile = {
+        role: 'user',
+        content: uploadedFile,
+        type: 'image_url',
+        timestamp: timestamp,
+      };
 
-    const now2 = new Date()
-    const timestamp2 = `${now2.getFullYear()}-${
-      now.getMonth() + 1
-    }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
-    const conversationDataLLM = {
-      role: 'chatgpt',
-      prompt: llmAnswer,
-      timestamp: timestamp2
-    }
-    setConversationData(currentData => [...currentData, conversationDataLLM])
-  }
 
-  useEffect(() => {
-    props.setConversationDataParent(conversationData)
-  }, [conversationData])
+
+      newConversationEntries.push(conversationDataFile); // add the file to the new conversation entries array
+    } 
+
+    newConversationEntries.push(llmAnswerData); // add the llm answer to the new conversation entries array
+
+     // update the conversation data
+    setConversationData(currentData => [...currentData, ...newConversationEntries]);
+    console.log("newConversationEntries",newConversationEntries)
+    props.setConversationDataParent(newConversationEntries); // update the parent component's conversation data
+        
+
+    // reset the input field
+    setUploadedFile(null);
+
+  };
+
+  // // save to backend
+  // useEffect(() => {
+  //   props.setConversationDataParent(newConversationToSave);
+  // }, [newConversationToSave]);
+
   return (
     <>
       <Box
@@ -109,25 +113,63 @@ export default function ChatGPTInterface (props) {
           fontSize: '0.875rem',
           fontWeight: '700',
           textAlign: 'center',
-          overflow: 'auto'
+          overflow: 'auto',
         }}
       >
         Chat Area
-        {conversationContainers}
+        {conversationData.map((conversation, i) => (
+          <Box
+            key={i}
+            className={`${conversation.role === 'user'
+              ? 'student_question_container'
+              : 'llm_answer_container'
+              }`}
+            sx={{ mt: 4 }}
+          >
+            <Stack
+              direction='row'
+              spacing={2}
+              sx={{ display: 'flex', alignItems: 'center' }}
+            >
+              <Avatar
+                alt='Remy Sharp'
+                src={`/images/${conversation.role === 'user' ? 'user.png' : 'student.jpeg'
+                  }`}
+              />
+              <h3>{conversation.role === 'user' ? 'You' : 'ChatGPT'}</h3>
+            </Stack>
+            <Box sx={{ m: 2, textAlign: 'left' }}>
+              {/* check if the content is base64-encoded */}
+              {conversation.content.startsWith('data:image') ? (
+                <img src={conversation.content} alt="User Uploaded" style={{ maxWidth: '100%', height: 'auto' }} />
+              ) : (
+                <p>{conversation.content}</p>
+              )}
+            </Box>
+          </Box>
+        ))}
+        {isLoading && (
+          <Box sx={{ textAlign: 'center', my: 2 }}>
+            <p>Loading...</p>
+            {/* 或者使用Mui的CircularProgress组件 */}
+            {/* <CircularProgress /> */}
+          </Box>
+        )}
       </Box>
+      <input type="file" id="fileInput" onChange={handleFileChange} />
       <TextField
+        value={studentInputPrompt}
         sx={{ width: '90%', ml: 2, mt: 2 }}
-        id=''
+        id='textInput'
         multiline
         rows={2}
         placeholder='Enter your question here'
-        onChange={e => {
-          onChangeStudentInputPrompt(e.target.value)
-        }}
+        onChange={(e) => setStudentInputPrompt(e.target.value)}
       />
       <Button variant='contained' sx={{ ml: 2, mt: 1 }} onClick={onClickSubmit}>
         Send
       </Button>
     </>
-  )
+  );
+
 }

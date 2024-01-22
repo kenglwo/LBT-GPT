@@ -9,8 +9,12 @@ export default function VisTestIndex () {
   const [conversationDataParent, setConversationDataParent] = useState([])
   const [answerDataParent, setAnswerDataParent] = useState([])
 
-  const handleConversationData = data => {
-    setConversationDataParent(currentData => [...currentData, data])
+  // const handleConversationData = data => {
+  //   setConversationDataParent(currentData => [...currentData, data])
+  // }
+
+  const handleConversationData = newEntries => {
+    setConversationDataParent(currentData => [...currentData, ...newEntries]);
   }
 
   const handleAnswerDataParent = data => {
@@ -19,6 +23,7 @@ export default function VisTestIndex () {
 
   useEffect(() => {
     if (answerDataParent.length > 0) {
+      console.log('answerDataParent', answerDataParent)
       const url = `${process.env.REACT_APP_API_URL}/save_student_data`
       const method = 'POST'
       const headers = {
@@ -47,35 +52,40 @@ export default function VisTestIndex () {
   }, [answerDataParent])
 
   useEffect(() => {
-    if (conversationDataParent.length > 0) {
-      const newData = conversationDataParent.slice(-1)[0]
-      const studentId = document.querySelector('#student_id').value
-
-      const url = `${process.env.REACT_APP_API_URL}/save_student_data`
-      const method = 'POST'
-      const headers = {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
+    const sendConversationData = async () => {
+      if (conversationDataParent.length > 0) {
+        const studentId = document.querySelector('#student_id').value;
+        const url = `${process.env.REACT_APP_API_URL}/save_student_data`;
+        const headers = {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        };
+  
+        const requests = conversationDataParent.map(newData => {
+          const bodyJSON = JSON.stringify({
+            data_id: 'conversation_data',
+            student_id: studentId,
+            data: newData
+          });
+  
+          return fetch(url, { method: 'POST', headers: headers, body: bodyJSON })
+            .then(res => res.json())
+            .then(result => {
+              if (result.status !== 'success') {
+                console.error('Error saving data:', result);
+              }
+            })
+            .catch(console.error);
+        });
+  
+        await Promise.all(requests);
+        setConversationDataParent([]); // 清空conversationDataParent以避免重复发送
       }
-      const body = {
-        data_id: 'conversation_data',
-        student_id: studentId,
-        data: newData
-      }
-      const bodyJSON = JSON.stringify(body)
-
-      fetch(url, { method: method, headers: headers, body: bodyJSON })
-        .then(res => res.json())
-        .then(result => {
-          if (result.status === 'success') {
-            //
-          } else {
-            //
-          }
-        })
-        .catch(console.error)
-    }
-  }, [conversationDataParent])
+    };
+  
+    sendConversationData();
+  }, [conversationDataParent]);
+  
 
   return (
     <Box sx={{ height: '100vh' }}>
