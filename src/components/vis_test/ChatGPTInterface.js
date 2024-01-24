@@ -1,35 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
-import { sendChatToGPT } from './chatpgt_api';
+import React, { useState, useEffect } from 'react'
+import Box from '@mui/material/Box'
+import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
+import Avatar from '@mui/material/Avatar'
+import Stack from '@mui/material/Stack'
+import { sendChatToGPT } from './chatpgt_api'
 
-export default function ChatGPTInterface(props) {
-  const [studentInputPrompt, setStudentInputPrompt] = useState('');
-  const [conversationData, setConversationData] = useState([]);
-  const [uploadedFile, setUploadedFile] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+export default function ChatGPTInterface (props) {
+  const [studentInputPrompt, setStudentInputPrompt] = useState('')
+  const [conversationData, setConversationData] = useState([])
+  const [uploadedFile, setUploadedFile] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
+  const handleFileChange = event => {
+    const file = event.target.files[0]
     if (file) {
-      const reader = new FileReader();
+      const studentId = document.querySelector('#student_id').value
+      if (studentId === '') {
+        window.alert('Please input your student ID')
+        return
+      }
+      const reader = new FileReader()
       reader.onloadend = () => {
-        setUploadedFile(reader.result); // base 64 to save the file
-      };
-      reader.readAsDataURL(file); // read the file via url
+        setUploadedFile(reader.result) // base 64 to save the file
+      }
+      reader.readAsDataURL(file) // read the file via url
     }
-  };
-
+  }
 
   const onClickSubmit = async () => {
-    const now = new Date();
-    const timestamp = `${now.getFullYear()}-${now.getMonth() + 1
-      }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
-
-
+    const now = new Date()
+    const timestamp = `${now.getFullYear()}-${
+      now.getMonth() + 1
+    }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
 
     // to store the current text input, since we want to clear the input field after sending the message
     let currentTextInput = studentInputPrompt
@@ -38,26 +41,27 @@ export default function ChatGPTInterface(props) {
       role: 'user',
       type: 'text',
       content: currentTextInput,
-      timestamp: timestamp,
-    };
+      timestamp: timestamp
+    }
 
+    let newConversationEntries = [conversationDataStudent] // 初始化新对话条目数组
 
-    let newConversationEntries = [conversationDataStudent]; // 初始化新对话条目数组
-
-    setIsLoading(true); // start to load
+    setIsLoading(true) // start to load
 
     // Assume sendChatToGPT can handle both text and file inputs
     // need to add a timestamp to llmAnswer
 
     // clear the input field
-    setStudentInputPrompt('');
-    document.getElementById('fileInput').value = '';
+    setStudentInputPrompt('')
+    document.getElementById('fileInput').value = ''
 
-    const llmAnswer = await sendChatToGPT(conversationData, currentTextInput, uploadedFile);
+    const llmAnswer = await sendChatToGPT(
+      conversationData,
+      currentTextInput,
+      uploadedFile
+    )
 
-    setIsLoading(false); // finish loading
-
-    
+    setIsLoading(false) // finish loading
 
     // update the conversation log with the LLM's answer
     const llmAnswerData = {
@@ -72,26 +76,25 @@ export default function ChatGPTInterface(props) {
         role: 'user',
         content: uploadedFile,
         type: 'image_url',
-        timestamp: timestamp,
-      };
+        timestamp: timestamp
+      }
 
+      newConversationEntries.push(conversationDataFile) // add the file to the new conversation entries array
+    }
 
+    newConversationEntries.push(llmAnswerData) // add the llm answer to the new conversation entries array
 
-      newConversationEntries.push(conversationDataFile); // add the file to the new conversation entries array
-    } 
-
-    newConversationEntries.push(llmAnswerData); // add the llm answer to the new conversation entries array
-
-     // update the conversation data
-    setConversationData(currentData => [...currentData, ...newConversationEntries]);
-    console.log("newConversationEntries",newConversationEntries)
-    props.setConversationDataParent(newConversationEntries); // update the parent component's conversation data
-        
+    // update the conversation data
+    setConversationData(currentData => [
+      ...currentData,
+      ...newConversationEntries
+    ])
+    console.log('newConversationEntries', newConversationEntries)
+    props.setConversationDataParent(newConversationEntries) // update the parent component's conversation data
 
     // reset the input field
-    setUploadedFile(null);
-
-  };
+    setUploadedFile(null)
+  }
 
   // // save to backend
   // useEffect(() => {
@@ -121,12 +124,12 @@ export default function ChatGPTInterface(props) {
         {conversationData.map((conversation, i) => (
           <Box
             key={i}
-            className={`${conversation.role === 'user'
-              ? 'student_question_container'
-              : 'llm_answer_container'
-              }`}
-            sx={{ mt: 4 ,
-              whiteSpace: 'pre-wrap'}}
+            className={`${
+              conversation.role === 'user'
+                ? 'student_question_container'
+                : 'llm_answer_container'
+            }`}
+            sx={{ mt: 4, whiteSpace: 'pre-wrap' }}
           >
             <Stack
               direction='row'
@@ -135,17 +138,18 @@ export default function ChatGPTInterface(props) {
             >
               <Avatar
                 alt='Remy Sharp'
-                src={`/images/${conversation.role === 'user' ? 'user.png' : 'student.jpeg'
-                  }`}
+                src={`/images/${
+                  conversation.role === 'user' ? 'user.png' : 'student.jpeg'
+                }`}
               />
               <h3>{conversation.role === 'user' ? 'You' : 'ChatGPT'}</h3>
             </Stack>
             <Box sx={{ m: 2, textAlign: 'left', whiteSpace: 'pre-wrap' }}>
-  {/* 检查内容是否是 base64 编码的图片 */}
+  {/* check if incoming content is base64 encoded figure */}
   {conversation.content.startsWith('data:image') ? (
     <img src={conversation.content} alt="User Uploaded" style={{ maxWidth: '100%', height: 'auto' }} />
   ) : (
-    // 检查内容是否是图片 URL
+    // check if incoming content is figure URL
     conversation.content.startsWith('http') ? (
       <img src={conversation.content} alt="Generated Image" style={{ maxWidth: '100%', height: 'auto' }} />
     ) : (
@@ -163,7 +167,7 @@ export default function ChatGPTInterface(props) {
           </Box>
         )}
       </Box>
-      <input type="file" id="fileInput" onChange={handleFileChange} />
+      <input type='file' id='fileInput' onChange={handleFileChange} />
       <TextField
         value={studentInputPrompt}
         sx={{ width: '90%', ml: 2, mt: 2 }}
@@ -171,12 +175,11 @@ export default function ChatGPTInterface(props) {
         multiline
         rows={2}
         placeholder='Enter your question here'
-        onChange={(e) => setStudentInputPrompt(e.target.value)}
+        onChange={e => setStudentInputPrompt(e.target.value)}
       />
       <Button variant='contained' sx={{ ml: 2, mt: 1 }} onClick={onClickSubmit}>
         Send
       </Button>
     </>
-  );
-
+  )
 }
