@@ -1,3 +1,6 @@
+require 'base64'
+require 'fileutils'
+
 class ApiController < ApplicationController
     def test
         render json: {"status": "success"}
@@ -25,6 +28,18 @@ class ApiController < ApplicationController
 
         elsif data_id == 'conversation_data' then
             role = data[:role]
+            type = data[:type]
+            if type == 'image_url' then
+                base64_image = data[:content].split(',').last
+                decoded_image = Base64.decode64(base64_image)
+                timestamp = data[:timestamp].gsub(" ", "_").gsub(":", "-")
+                filename = "#{student_id}_#{timestamp}.png"
+                file_path = Rails.public_path.join(student_id, filename)
+                logger.debug file_path
+                FileUtils.mkdir_p(File.dirname(file_path))
+                File.open(file_path, 'wb') { |file| file.write(decoded_image) }
+              
+            end
             prompt = data[:content]
             new_data = ConversationDatum.new(student_id: student_id, role: role, prompt: prompt)
             if new_data.save
