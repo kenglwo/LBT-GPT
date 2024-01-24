@@ -140,15 +140,20 @@ export default function ChatGPTInterface(props) {
               />
               <h3>{conversation.role === 'user' ? 'You' : 'ChatGPT'}</h3>
             </Stack>
-            <Box sx={{ m: 2, textAlign: 'left',
-          whiteSpace: 'pre-wrap' }}>
-              {/* check if the content is base64-encoded */}
-              {conversation.content.startsWith('data:image') ? (
-                <img src={conversation.content} alt="User Uploaded" style={{ maxWidth: '100%', height: 'auto' }} />
-              ) : (
-                <p>{conversation.content}</p>
-              )}
-            </Box>
+            <Box sx={{ m: 2, textAlign: 'left', whiteSpace: 'pre-wrap' }}>
+  {/* 检查内容是否是 base64 编码的图片 */}
+  {conversation.content.startsWith('data:image') ? (
+    <img src={conversation.content} alt="User Uploaded" style={{ maxWidth: '100%', height: 'auto' }} />
+  ) : (
+    // 检查内容是否是图片 URL
+    conversation.content.startsWith('http') ? (
+      <img src={conversation.content} alt="Generated Image" style={{ maxWidth: '100%', height: 'auto' }} />
+    ) : (
+      <p>{conversation.content}</p>
+    )
+  )}
+</Box>
+
           </Box>
         ))}
         {isLoading && (
