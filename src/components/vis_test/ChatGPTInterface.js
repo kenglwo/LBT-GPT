@@ -114,6 +114,7 @@ export default function ChatGPTInterface(props) {
           fontWeight: '700',
           textAlign: 'center',
           overflow: 'auto',
+          whiteSpace: 'pre-wrap'
         }}
       >
         Chat Area
@@ -124,7 +125,8 @@ export default function ChatGPTInterface(props) {
               ? 'student_question_container'
               : 'llm_answer_container'
               }`}
-            sx={{ mt: 4 }}
+            sx={{ mt: 4 ,
+              whiteSpace: 'pre-wrap'}}
           >
             <Stack
               direction='row'
@@ -138,7 +140,8 @@ export default function ChatGPTInterface(props) {
               />
               <h3>{conversation.role === 'user' ? 'You' : 'ChatGPT'}</h3>
             </Stack>
-            <Box sx={{ m: 2, textAlign: 'left' }}>
+            <Box sx={{ m: 2, textAlign: 'left',
+          whiteSpace: 'pre-wrap' }}>
               {/* check if the content is base64-encoded */}
               {conversation.content.startsWith('data:image') ? (
                 <img src={conversation.content} alt="User Uploaded" style={{ maxWidth: '100%', height: 'auto' }} />
@@ -151,7 +154,6 @@ export default function ChatGPTInterface(props) {
         {isLoading && (
           <Box sx={{ textAlign: 'center', my: 2 }}>
             <p>Loading...</p>
-            {/* 或者使用Mui的CircularProgress组件 */}
             {/* <CircularProgress /> */}
           </Box>
         )}

@@ -16,7 +16,8 @@ const app = initializeApp(firebaseConfig);
 const functions = getFunctions(app);
 
 if (window.location.hostname === "localhost") {
-    connectFunctionsEmulator(functions, "127.0.0.1", 5001);
+    // connectFunctionsEmulator(functions, "127.0.0.1", 5001);
+    // no need for our project
 };
 
 const helper = {
