@@ -18,7 +18,7 @@ export default function VisTestIndex () {
 
   const handleTestStart = () => {
     setTestStarted(true)
-    setConversationDataParent([]); // 清空会话数据
+    setConversationDataParent([]); // clear conversation Data
   }
 
   const resetTest = () => {
