@@ -13,26 +13,29 @@ export default function QuestionForm (props) {
   const [studentName, setStudentName] = useState([])
   const [studentId, setStudentId] = useState([])
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1)
 
   // 添加状态来跟踪用户是否进入了测试
-  const [isTestStarted, setIsTestStarted] = useState(false);
+  const [isTestStarted, setIsTestStarted] = useState(false)
+
+  useEffect(() => {
+    props.setAnswerDataParent(studentAnswerArrayParent)
+  }, [studentAnswerArrayParent])
 
   const startTest = () => {
     // 清空当前对话数据
-    props.setConversationDataParent([]);
+    props.setConversationDataParent([])
 
     // 标记测试开始
-    setIsTestStarted(true);
+    setIsTestStarted(true)
 
     // 通知 VisTestIndex 组件，用户已进入测试
-    props.setHasEnteredTest(true);
-  };
+    props.setHasEnteredTest(true)
+  }
 
   if (isTestStarted) {
     // 如果测试已开始，渲染 Test1 组件
-    return <Test1 handleStudentAnswerArray={props.handleStudentAnswerArray} />;
-    
+    return <Test1 handleStudentAnswerArray={props.handleStudentAnswerArray} />
   } else {
     // 如果测试未开始，显示开始测试的按钮
     return (
@@ -40,9 +43,8 @@ export default function QuestionForm (props) {
         {/* 其他表单元素 */}
         <button onClick={startTest}>Start Test</button>
       </div>
-    );
+    )
   }
-
 
   const handleStudentAnswerArray = array => {
     try {
@@ -64,13 +66,10 @@ export default function QuestionForm (props) {
   const handleNextPageClick = () => {
     // 执行任何需要的操作，如保存当前对话数据等
     if (props.onNextPageClick) {
-      props.onNextPageClick(); // 调用从 VisTestIndex 传递的函数
+      props.onNextPageClick() // 调用从 VisTestIndex 传递的函数
+    }
   }
-}
 
-  useEffect(() => {
-    props.setAnswerDataParent(studentAnswerArrayParent)
-  }, [studentAnswerArrayParent])
   return (
     <>
       <Box sx={{ display: 'flex', alignItems: 'center', mr: 4, float: 'left' }}>
