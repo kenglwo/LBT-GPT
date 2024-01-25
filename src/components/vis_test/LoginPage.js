@@ -9,6 +9,8 @@ import TextField from '@mui/material/TextField'
 export default function LoginPage (props) {
   const [studentName, setStudentName] = useState('')
   const [studentId, setStudentId] = useState('')
+  const [ifStudentNameEmpty, setIfStudentNameEmpty] = useState(false)
+  const [ifStudentIdEmpty, setIfStudentIdEmpty] = useState(false)
   const navigate = useNavigate()
 
   const onChangeStudentName = name => {
@@ -20,6 +22,17 @@ export default function LoginPage (props) {
   }
 
   const onClickSubmit = () => {
+    if (studentName === '') {
+      setIfStudentNameEmpty(true)
+      return
+    } else {
+      setIfStudentNameEmpty(false)
+    }
+    if (studentId === '') {
+      setIfStudentIdEmpty(true)
+      return
+    }
+
     navigate('/test', {
       state: { studentName: studentName, studentId: studentId }
     })
@@ -49,6 +62,9 @@ export default function LoginPage (props) {
               onChange={e => {
                 onChangeStudentName(e.target.value)
               }}
+              {...(ifStudentNameEmpty
+                ? { error: true, helperText: 'Plese input your name' }
+                : {})}
             />
             <TextField
               sx={{ width: '300px' }}
@@ -58,6 +74,9 @@ export default function LoginPage (props) {
               onChange={e => {
                 onChangeStudentId(e.target.value)
               }}
+              {...(ifStudentIdEmpty
+                ? { error: true, helperText: 'Plese input student ID' }
+                : {})}
             />
           </Stack>
           <Button sx={{ mt: 4 }} variant='contained' onClick={onClickSubmit}>
