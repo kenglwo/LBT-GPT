@@ -1,5 +1,7 @@
 require 'base64'
 require 'fileutils'
+require 'down'
+require "fileutils"
 
 class ApiController < ApplicationController
     def test
@@ -43,12 +45,19 @@ class ApiController < ApplicationController
                 timestamp = data[:timestamp].gsub(" ", "_").gsub(":", "-")
                 filename = "#{student_id}_#{timestamp}.png"
                 file_path = Rails.public_path.join(student_id, filename)
-                logger.debug file_path
                 FileUtils.mkdir_p(File.dirname(file_path))
                 File.open(file_path, 'wb') { |file| file.write(decoded_image) }
                 prompt_data = file_path
             elsif type == 'text' then
                 prompt_data = data[:content]
+                if data[:content].start_with?("https://") then
+                    tempfile = Down.download(data[:content])
+                    filename = tempfile.original_filename
+                    file_path = Rails.public_path.join(student_id, 'DALLE-3', filename)
+                    FileUtils.mkdir_p(File.dirname(file_path))
+                    FileUtils.mv(tempfile.path, file_path)
+                end
+
             end
             new_data = ConversationDatum.new(student_id: student_id, role: role, prompt: prompt_data)
             api_status = new_data.save ? "success" : "failed"
