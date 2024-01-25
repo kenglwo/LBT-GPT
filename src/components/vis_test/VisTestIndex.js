@@ -47,7 +47,7 @@ export default function VisTestIndex () {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       }
-      const studentId = document.querySelector('#student_id').value
+      const studentId = location.state.studentId
       const body = {
         data_id: 'answer_data',
         student_id: studentId,

@@ -7,6 +7,17 @@ class ApiController < ApplicationController
 
     end
 
+    def save_student_info
+        student_id = params['student_id']
+        student_name = params['student_name']
+        api_status = ""
+
+        new_data = StudentDatum.new(student_id: student_id, student_name: student_name)
+        api_status = new_data.save ? "success" : "failed"
+
+        render json: {"status": api_status}
+    end
+
     def save_student_data
         data_id = params['data_id']
         data = params['data']
@@ -19,11 +30,7 @@ class ApiController < ApplicationController
                 answer = d[:answer]
                 new_data = AnswerDatum.new(student_id: student_id, question_id: question_id, answer: answer)
                 
-                if new_data.save
-                    api_status = "success"
-                else
-                    api_status = "failed"
-                end
+                api_status = new_data.save ? "success" : "failed"
             end
 
         elsif data_id == 'conversation_data' then
@@ -44,13 +51,7 @@ class ApiController < ApplicationController
                 prompt_data = data[:content]
             end
             new_data = ConversationDatum.new(student_id: student_id, role: role, prompt: prompt_data)
-            if new_data.save
-                api_status = "success"
-            else
-                api_status = "failed"
-            end
-        end
-
+            api_status = new_data.save ? "success" : "failed"
         elsif data_id == 'quiz_conversation_data' then
             role = data[:role]
             type = data[:type]
@@ -69,11 +70,7 @@ class ApiController < ApplicationController
                 prompt_data = data[:content]
             end
             new_data = QuizConversationDatum.new(student_id: student_id, role: role, prompt: prompt_data)
-            if new_data.save
-                api_status = "success"
-            else
-                api_status = "failed"
-            end
+            api_status = new_data.save ? "success" : "failed"
         end
 
         render json: {"status": api_status}

@@ -5,12 +5,14 @@ import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
+import Alert from '@mui/material/Alert'
 
 export default function LoginPage (props) {
   const [studentName, setStudentName] = useState('')
   const [studentId, setStudentId] = useState('')
   const [ifStudentNameEmpty, setIfStudentNameEmpty] = useState(false)
   const [ifStudentIdEmpty, setIfStudentIdEmpty] = useState(false)
+  const [ifStudentDataSaved, setIfStudentDataSaved] = useState(null)
   const navigate = useNavigate()
 
   const onChangeStudentName = name => {
@@ -33,9 +35,34 @@ export default function LoginPage (props) {
       return
     }
 
-    navigate('/test', {
-      state: { studentName: studentName, studentId: studentId }
-    })
+    const url = `${process.env.REACT_APP_API_URL}/save_student_info`
+    const method = 'POST'
+    const headers = {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
+    const body = {
+      student_id: studentId,
+      student_name: studentName
+    }
+    const bodyJSON = JSON.stringify(body)
+
+    fetch(url, { method: method, headers: headers, body: bodyJSON })
+      .then(res => res.json())
+      .then(result => {
+        console.log(result.status)
+        if (result.status === 'success') {
+          setIfStudentDataSaved(true)
+          navigate('/test', {
+            state: { studentName: studentName, studentId: studentId }
+          })
+        } else if (result.status === 'failed') {
+          setIfStudentDataSaved(false)
+        }
+      })
+      .catch(console.error)
+
+    // return if API failed to store student data
   }
 
   return (
@@ -82,6 +109,9 @@ export default function LoginPage (props) {
           <Button sx={{ mt: 4 }} variant='contained' onClick={onClickSubmit}>
             Submit
           </Button>
+          {ifStudentDataSaved === false && (
+            <Alert severity='error'>This is an error Alert.</Alert>
+          )}
         </Grid>
         <Grid xs={2} />
       </Grid>
