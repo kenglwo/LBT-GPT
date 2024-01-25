@@ -142,7 +142,7 @@ const getGPT4VResponse = async (messages,fileBase64, gpt_4V, headers, endpoint) 
   }
 
   // check the whole messages array to be sent to the API
-  console.log(messages);
+  console.log("messages to be sent to API",messages);
 
 
 

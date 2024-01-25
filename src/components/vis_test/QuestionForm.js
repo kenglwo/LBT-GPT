@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField'
 import Test1 from './tests/Test1'
 import Button from '@mui/material/Button'
 
-export default function QuestionForm (props) {
+export default function QuestionForm ({setAnswerDataParent, onTestStart, setConversationDataParent }) {
   const [studentAnswerArrayParent, setStudentAnswerArrayParent] = useState([])
   const [answerSubmissionStatus, setAnswerSubmissionStatus] = useState([
     'not yet'
@@ -19,21 +19,34 @@ export default function QuestionForm (props) {
   const [isTestStarted, setIsTestStarted] = useState(false);
 
   const startTest = () => {
-    // clear the conversation history variable.
-    props.setConversationDataParent([]);
+    onTestStart(); // Trigger test start in VisTestIndex
+    setIsTestStarted(true); // Update state to indicate that user has entered the test
+    
+    // // clear the conversation history variable.
+    // setConversationDataParent([]);
 
-    // mark the start of the test
-    setIsTestStarted(true);
+    // // mark the start of the test
+    // setIsTestStarted(true);
 
-    // notice "VisTestIndex" component that user has already enter the test
-    props.setHasEnteredTest(true);
+    // // notice "VisTestIndex" component that user has already enter the test
+    // props.setHasEnteredTest(true);
   };
+
+  const handleStudentAnswerArray = array => {
+    try {
+      setStudentAnswerArrayParent(array)
+      setAnswerSubmissionStatus('success')
+    } catch (error) {
+      setAnswerSubmissionStatus('error')
+      console.log(error)
+    }
+  }
 
   if (isTestStarted) {
     // if start the test，rander "Test1" component
     return (
       <>
-      <Test1 handleStudentAnswerArray={props.handleStudentAnswerArray} />
+      <Test1 handleStudentAnswerArray={handleStudentAnswerArray} />
     {answerSubmissionStatus === 'success' && (
       <Alert severity='success' sx={{ width: '400px', ml: 5, mt: 3 }}>
         Your answer was successfully submitted

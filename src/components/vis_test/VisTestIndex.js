@@ -9,8 +9,17 @@ export default function VisTestIndex () {
   const [conversationDataParent, setConversationDataParent] = useState([])
   const [answerDataParent, setAnswerDataParent] = useState([])
   // const [hasClickedNextPage, setHasClickedNextPage] = useState(false);
-  const [hasEnteredTest, setHasEnteredTest] = useState(false);
+  // const [hasEnteredTest, setHasEnteredTest] = useState(false);
+  const [testStarted, setTestStarted] = useState(false);
 
+
+  const handleTestStart = () => {
+    setTestStarted(true);
+  };
+
+  const resetTest = () => {
+    setTestStarted(false);
+  };
 
   // const handleNextPageClick = () => {
   //   if (!hasClickedNextPage) {
@@ -59,6 +68,7 @@ export default function VisTestIndex () {
 
   useEffect(() => {
     const sendConversationData = async () => {
+      console.log('conversationDataParent to be saved', conversationDataParent)
       if (conversationDataParent.length > 0) {
         const studentId = document.querySelector('#student_id').value;
         const url = `${process.env.REACT_APP_API_URL}/save_student_data`;
@@ -68,7 +78,7 @@ export default function VisTestIndex () {
         };
 
         // distinglish which table to store the data
-        const dataId = hasEnteredTest ? 'quiz_conversation_data' : 'conversation_data';
+        const dataId = testStarted ? 'quiz_conversation_data' : 'conversation_data';
   
         const requests = conversationDataParent.map(newData => {
           const bodyJSON = JSON.stringify({
@@ -94,7 +104,7 @@ export default function VisTestIndex () {
     };
   
     sendConversationData();
-  }, [conversationDataParent, hasEnteredTest]);
+  }, [conversationDataParent, testStarted]);
   
 
   return (
@@ -103,11 +113,14 @@ export default function VisTestIndex () {
         <Grid xs={4}>
           <ChatGPTInterface
             setConversationDataParent={setConversationDataParent}
+            testStarted={testStarted} 
+            resetTest={resetTest}
           />
         </Grid>
         <Grid xs={8}>
           <QuestionForm setAnswerDataParent={setAnswerDataParent} 
-          setHasEnteredTest={setHasEnteredTest}
+          // setTestStarted={setTestStarted}
+          onTestStart={handleTestStart}
           setConversationDataParent={setConversationDataParent}
           />
         </Grid>
