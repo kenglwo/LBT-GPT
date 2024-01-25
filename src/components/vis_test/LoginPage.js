@@ -1,13 +1,15 @@
 import { React, useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Grid from '@mui/material/Unstable_Grid2'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
-export default function LoginPage () {
+export default function LoginPage (props) {
   const [studentName, setStudentName] = useState('')
   const [studentId, setStudentId] = useState('')
+  const navigate = useNavigate()
 
   const onChangeStudentName = name => {
     setStudentName(name)
@@ -17,7 +19,11 @@ export default function LoginPage () {
     setStudentId(id)
   }
 
-  useEffect(() => {}, [studentId])
+  const onClickSubmit = () => {
+    navigate('/test', {
+      state: { studentName: studentName, studentId: studentId }
+    })
+  }
 
   return (
     <Box sx={{ height: '100vh' }}>
@@ -54,7 +60,7 @@ export default function LoginPage () {
               }}
             />
           </Stack>
-          <Button sx={{ mt: 4 }} variant='contained'>
+          <Button sx={{ mt: 4 }} variant='contained' onClick={onClickSubmit}>
             Submit
           </Button>
         </Grid>

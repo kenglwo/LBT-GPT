@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Unstable_Grid2'
 import ChatGPTInterface from './ChatGPTInterface'
@@ -10,6 +11,8 @@ export default function VisTestIndex () {
   const [answerDataParent, setAnswerDataParent] = useState([])
   const [hasClickedNextPage, setHasClickedNextPage] = useState(false)
   const [enteredTest, setHasEnteredTest] = useState(false)
+
+  const location = useLocation()
 
   const handleNextPageClick = () => {
     if (!hasClickedNextPage) {
