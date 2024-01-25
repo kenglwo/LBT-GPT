@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_01_25_145823) do
+ActiveRecord::Schema.define(version: 2024_01_25_153148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2024_01_25_145823) do
     t.string "image_url_local"
   end
 
-  create_table "dalle3_image_mappings_quiz", force: :cascade do |t|
+  create_table "dalle3_image_mappings_quizzes", force: :cascade do |t|
     t.bigint "id_quiz_conversation_data"
     t.string "image_url_local"
   end
