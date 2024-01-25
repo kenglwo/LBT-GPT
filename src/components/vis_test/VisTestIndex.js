@@ -13,11 +13,12 @@ export default function VisTestIndex () {
   // const [hasEnteredTest, setHasEnteredTest] = useState(false);
   const [testStarted, setTestStarted] = useState(false)
 
-  const location = useLocation()
+  const location = useLocation();
   const { studentName, studentId } = location.state;
 
   const handleTestStart = () => {
     setTestStarted(true)
+    setConversationDataParent([]); // 清空会话数据
   }
 
   const resetTest = () => {

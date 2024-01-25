@@ -17,9 +17,9 @@ export default function ChatGPTInterface ({setConversationDataParent, testStarte
   useEffect(() => {
     if (testStarted) {
       setConversationData([]); // Reset conversation data when the test starts
-      resetTest(); // Reset the testStarted flag in parent
+      // resetTest(); // Reset the testStarted flag in parent
     }
-  }, [testStarted, resetTest]);
+  }, [testStarted]);
 
 
   const handleFileChange = event => {
