@@ -1,0 +1,2 @@
+class Dalle3ImageMappingsQuiz < ApplicationRecord
+end
