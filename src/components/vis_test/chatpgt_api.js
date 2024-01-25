@@ -71,7 +71,7 @@ const askGPTShouldGenerateImage = async (text, model, headers, endpoint) => {
     messages: messagesWithInquiry
   }
 
-  // 调用 GPT-4 API
+  // call GPT-4 API
   const inquiry_response = await fetch(endpoint, {
     method: 'POST',
     headers: headers,
@@ -93,10 +93,10 @@ const askGPTShouldGenerateImage = async (text, model, headers, endpoint) => {
     // return true;
   }
 
-  return false; // 默认不生成图片
+  return false; // no figure for deaflut
 };
 
-// generateImageWithDALLE 函数的实现
+// generateImageWithDALLE function
 const generateImageWithDALLE = async (prompt, model, headers,endpoint) => {
   // code to call DALL-E 3 API
   

@@ -49,7 +49,7 @@ class ApiController < ApplicationController
             else
                 api_status = "failed"
             end
-        end
+        
 
         elsif data_id == 'quiz_conversation_data' then
             role = data[:role]
