@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import Avatar from '@mui/material/Avatar'
 import Stack from '@mui/material/Stack'
+import { useLocation } from 'react-router-dom'
 import { sendChatToGPT } from './chatpgt_api'
 
 export default function ChatGPTInterface ({setConversationDataParent, testStarted, resetTest }) {
@@ -12,20 +13,21 @@ export default function ChatGPTInterface ({setConversationDataParent, testStarte
   const [uploadedFile, setUploadedFile] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
 
-
+  const location = useLocation();
+  const { studentName, studentId } = location.state;
 
   useEffect(() => {
     if (testStarted) {
       setConversationData([]); // Reset conversation data when the test starts
       // resetTest(); // Reset the testStarted flag in parent
     }
-  }, [testStarted]);
+  }, [testStarted]); // only update ConversationData when testStarted changes
 
 
   const handleFileChange = event => {
     const file = event.target.files[0]
     if (file) {
-      const studentId = document.querySelector('#student_id').value
+      // const studentId = document.querySelector('#student_id').value
       if (studentId === '') {
         window.alert('Please input your student ID')
         return
