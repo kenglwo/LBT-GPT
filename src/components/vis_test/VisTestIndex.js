@@ -108,6 +108,7 @@ export default function VisTestIndex () {
         <Grid xs={8}>
           <QuestionForm setAnswerDataParent={setAnswerDataParent} 
           setHasEnteredTest={setHasEnteredTest}
+          setConversationDataParent={setConversationDataParent}
           />
         </Grid>
       </Grid>
