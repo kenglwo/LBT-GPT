@@ -99,7 +99,7 @@ export default function VisTestIndex () {
         });
   
         await Promise.all(requests);
-        setConversationDataParent([]); // 清空conversationDataParent以避免重复发送
+        setConversationDataParent([]); // clear conversationDataParent to avoid duplicate saving
       }
     };
   

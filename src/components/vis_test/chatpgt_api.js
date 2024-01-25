@@ -23,7 +23,7 @@ export const sendChatToGPT = async (conversationHistory, text, fileBase64) => {
   
     return {
       role: conversation.role,
-      content: content ? [content] : [] // 确保content是一个数组
+      content: content ? [content] : [] // ensure content is an array
     };
   });
   
@@ -33,19 +33,19 @@ export const sendChatToGPT = async (conversationHistory, text, fileBase64) => {
   messages.push(newPrompt);
 
 
-  // 先询问 GPT-4 是否需要生成图片
+  // first inquiry GPT-4: whether the user is asking for generating a figure
   const shouldGenerateImage = await askGPTShouldGenerateImage(text, gpt_4, headers, endpoint);
   console.log("shouldGenerateImage",shouldGenerateImage)
 
   if (shouldGenerateImage) {
-    // 如果 GPT-4 建议生成图片，调用 DALL-E 3
-    const imageResponse = await generateImageWithDALLE(text, dalle2, headers,dalle_endpoint); // 或根据需要修改 prompt
+    // if GPT-4 recommend to generate a figure，call DALL-E 3
+    const imageResponse = await generateImageWithDALLE(text, dalle2, headers,dalle_endpoint); // 
     console.log("imageResponse",imageResponse)
     // return { type: 'image', content: imageResponse };
     return imageResponse
   } else {
     console.log("noImageResponse!")
-    // 否则，继续处理文本回复
+    // otherwise, call GPT 4-v to generate response
     return await getGPT4VResponse(messages,fileBase64, gpt_4V, headers, endpoint);
   }
 };
@@ -55,7 +55,8 @@ const askGPTShouldGenerateImage = async (text, model, headers, endpoint) => {
   const newUserMessage = { role: 'user', content: [{ type: 'text', text: text }] };
   // messages.push(newUserMessage);
 
-  // 构造一个新的消息数组，包括用户的输入和一个询问是否生成图片的问题
+
+  // create a new nessary array, includes users prompt input and a system inquiry that whether the user is asking for a figure generation.
   const messagesWithInquiry = [
     { role: 'system', content: `Is the user's input a request to generate an image? Please answer with yes or no.` },
     newUserMessage
@@ -83,12 +84,12 @@ const askGPTShouldGenerateImage = async (text, model, headers, endpoint) => {
     throw new Error('GPT-4 API failed')
   }
 
-  // 处理响应
+  // handle response
   if (inquiry_response.ok) {
     const inquiry_responseJSON = await inquiry_response.json();
     const inquiry_answer = inquiry_responseJSON.choices[0].message.content;
     console.log("inquiry_answer",inquiry_answer)
-    return inquiry_answer.toLowerCase().includes('yes'); // 简单的判断逻辑
+    return inquiry_answer.toLowerCase().includes('yes'); // logic judgement
     // return true;
   }
 
@@ -97,8 +98,8 @@ const askGPTShouldGenerateImage = async (text, model, headers, endpoint) => {
 
 // generateImageWithDALLE 函数的实现
 const generateImageWithDALLE = async (prompt, model, headers,endpoint) => {
-  // 调用 DALL-E 3 API 的代码
-  // const dalleEndpoint = 'YOUR_DALLE_API_ENDPOINT'; // 替换成你的 DALL-E 3 API 端点
+  // code to call DALL-E 3 API
+  
 
 
   const data = {

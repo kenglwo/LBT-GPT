@@ -15,9 +15,9 @@ export default function Test1(props) {
   const [studentAnswer2_2, setStudentAnswer2_2] = useState('')
   const [studentAnswer2_3, setStudentAnswer2_3] = useState('')
   const [studentAnswer3, setStudentAnswer3] = useState('')
-  // const [isVisible, setIsVisible] = useState(true); // 默认为true，显示这些部分
+  // const [isVisible, setIsVisible] = useState(true); // default is true
 
-  const [currentPage, setCurrentPage] = useState(1); // 新增状态，用于跟踪当前页面
+  const [currentPage, setCurrentPage] = useState(1); // add a stage to control the page
 
   const onChangeAnswer0_1 = answerText => {
     setStudentAnswer0_1(answerText)

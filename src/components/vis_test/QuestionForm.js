@@ -15,21 +15,19 @@ export default function QuestionForm ({setAnswerDataParent, onTestStart, setConv
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  // 添加状态来跟踪用户是否进入了测试
+  // add a state to infer if user enter the test mode
   const [isTestStarted, setIsTestStarted] = useState(false);
 
   const startTest = () => {
     onTestStart(); // Trigger test start in VisTestIndex
     setIsTestStarted(true); // Update state to indicate that user has entered the test
-    
+
     // // clear the conversation history variable.
     // setConversationDataParent([]);
 
     // // mark the start of the test
     // setIsTestStarted(true);
 
-    // // notice "VisTestIndex" component that user has already enter the test
-    // props.setHasEnteredTest(true);
   };
 
   const handleStudentAnswerArray = array => {
