@@ -6,11 +6,21 @@ import Avatar from '@mui/material/Avatar'
 import Stack from '@mui/material/Stack'
 import { sendChatToGPT } from './chatpgt_api'
 
-export default function ChatGPTInterface (props) {
+export default function ChatGPTInterface ({setConversationDataParent, testStarted, resetTest }) {
   const [studentInputPrompt, setStudentInputPrompt] = useState('')
   const [conversationData, setConversationData] = useState([])
   const [uploadedFile, setUploadedFile] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
+
+
+
+  useEffect(() => {
+    if (testStarted) {
+      setConversationData([]); // Reset conversation data when the test starts
+      resetTest(); // Reset the testStarted flag in parent
+    }
+  }, [testStarted, resetTest]);
+
 
   const handleFileChange = event => {
     const file = event.target.files[0]
@@ -28,7 +38,20 @@ export default function ChatGPTInterface (props) {
     }
   }
 
-  const onClickSubmit = async () => {
+  // const handleNextPageClick = async () => {
+  //   // 如果是第一次点击 Next Page，清空对话并保存
+  //   if (isFirstNextPageClick) {
+  //     await saveConversationData(conversationData, 'quiz_conversation_data');
+  //     setConversationData([]);
+  //     setIsFirstNextPageClick(false); // 更新状态，表示不再是第一次点击
+  //   } else {
+  //     // 如果不是第一次点击，继续保存对话但不清空
+  //     await saveConversationData(conversationData, 'quiz_conversation_data');
+  //     // 不清空 setConversationData([]);
+  //   }
+  // };
+
+  const onClickSend = async () => {
     const now = new Date()
     const timestamp = `${now.getFullYear()}-${
       now.getMonth() + 1
@@ -44,7 +67,7 @@ export default function ChatGPTInterface (props) {
       timestamp: timestamp
     }
 
-    let newConversationEntries = [conversationDataStudent] // 初始化新对话条目数组
+    let newConversationEntries = [conversationDataStudent] // initialize the new conversation entries array
 
     setIsLoading(true) // start to load
 
@@ -90,16 +113,13 @@ export default function ChatGPTInterface (props) {
       ...newConversationEntries
     ])
     console.log('newConversationEntries', newConversationEntries)
-    props.setConversationDataParent(newConversationEntries) // update the parent component's conversation data
+    
+    setConversationDataParent(newConversationEntries) // update the parent component's conversation data
 
     // reset the input field
     setUploadedFile(null)
   }
 
-  // // save to backend
-  // useEffect(() => {
-  //   props.setConversationDataParent(newConversationToSave);
-  // }, [newConversationToSave]);
 
   return (
     <>
@@ -177,7 +197,7 @@ export default function ChatGPTInterface (props) {
         placeholder='Enter your question here'
         onChange={e => setStudentInputPrompt(e.target.value)}
       />
-      <Button variant='contained' sx={{ ml: 2, mt: 1 }} onClick={onClickSubmit}>
+      <Button variant='contained' sx={{ ml: 2, mt: 1 }} onClick={onClickSend}>
         Send
       </Button>
     </>

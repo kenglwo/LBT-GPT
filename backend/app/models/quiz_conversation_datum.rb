@@ -1,0 +1,2 @@
+class QuizConversationDatum < ApplicationRecord
+end
