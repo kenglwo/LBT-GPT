@@ -9,17 +9,26 @@ export default function VisTestIndex () {
   const [studentData, setStudentData] = useState([])
   const [conversationDataParent, setConversationDataParent] = useState([])
   const [answerDataParent, setAnswerDataParent] = useState([])
-  const [hasClickedNextPage, setHasClickedNextPage] = useState(false)
-  const [enteredTest, setHasEnteredTest] = useState(false)
+  // const [hasClickedNextPage, setHasClickedNextPage] = useState(false);
+  // const [hasEnteredTest, setHasEnteredTest] = useState(false);
+  const [testStarted, setTestStarted] = useState(false)
 
   const location = useLocation()
 
-  const handleNextPageClick = () => {
-    if (!hasClickedNextPage) {
-      // saveConversationData(conversationDataParent, 'conversation_data');
-      setHasClickedNextPage(true)
-    }
+  const handleTestStart = () => {
+    setTestStarted(true)
   }
+
+  const resetTest = () => {
+    setTestStarted(false)
+  }
+
+  // const handleNextPageClick = () => {
+  //   if (!hasClickedNextPage) {
+  //     saveConversationData(conversationDataParent, 'conversation_data');
+  //     setHasClickedNextPage(true);
+  //   }
+  // };
 
   const handleConversationData = newEntries => {
     setConversationDataParent(currentData => [...currentData, ...newEntries])
@@ -61,6 +70,7 @@ export default function VisTestIndex () {
 
   useEffect(() => {
     const sendConversationData = async () => {
+      console.log('conversationDataParent to be saved', conversationDataParent)
       if (conversationDataParent.length > 0) {
         const studentId = document.querySelector('#student_id').value
         const url = `${process.env.REACT_APP_API_URL}/save_student_data`
@@ -70,7 +80,7 @@ export default function VisTestIndex () {
         }
 
         // distinglish which table to store the data
-        const dataId = hasClickedNextPage
+        const dataId = testStarted
           ? 'quiz_conversation_data'
           : 'conversation_data'
 
@@ -97,12 +107,12 @@ export default function VisTestIndex () {
         })
 
         await Promise.all(requests)
-        setConversationDataParent([]) // 清空conversationDataParent以避免重复发送
+        setConversationDataParent([]) // clear conversationDataParent to avoid duplicate saving
       }
     }
 
     sendConversationData()
-  }, [conversationDataParent, hasClickedNextPage])
+  }, [conversationDataParent, testStarted])
 
   return (
     <Box sx={{ height: '100vh' }}>
@@ -110,14 +120,16 @@ export default function VisTestIndex () {
         <Grid xs={4}>
           <ChatGPTInterface
             setConversationDataParent={setConversationDataParent}
+            testStarted={testStarted}
+            resetTest={resetTest}
           />
         </Grid>
         <Grid xs={8}>
           <QuestionForm
             setAnswerDataParent={setAnswerDataParent}
-            onNextPageClick={handleNextPageClick}
+            // setTestStarted={setTestStarted}
+            onTestStart={handleTestStart}
             setConversationDataParent={setConversationDataParent}
-            setHasEnteredTest={setHasEnteredTest}
           />
         </Grid>
       </Grid>
