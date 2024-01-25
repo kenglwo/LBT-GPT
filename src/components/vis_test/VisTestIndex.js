@@ -8,10 +8,15 @@ export default function VisTestIndex () {
   const [studentData, setStudentData] = useState([])
   const [conversationDataParent, setConversationDataParent] = useState([])
   const [answerDataParent, setAnswerDataParent] = useState([])
+  const [hasClickedNextPage, setHasClickedNextPage] = useState(false);
 
-  // const handleConversationData = data => {
-  //   setConversationDataParent(currentData => [...currentData, data])
-  // }
+
+  const handleNextPageClick = () => {
+    if (!hasClickedNextPage) {
+      saveConversationData(conversationDataParent, 'conversation_data');
+      setHasClickedNextPage(true);
+    }
+  };
 
   const handleConversationData = newEntries => {
     setConversationDataParent(currentData => [...currentData, ...newEntries]);
@@ -60,10 +65,14 @@ export default function VisTestIndex () {
           Accept: 'application/json',
           'Content-Type': 'application/json'
         };
+
+        // distinglish which table to store the data
+        const dataId = hasClickedNextPage ? 'quiz_conversation_data' : 'conversation_data';
   
         const requests = conversationDataParent.map(newData => {
           const bodyJSON = JSON.stringify({
-            data_id: 'conversation_data',
+            // data_id: 'conversation_data',
+            data_id: dataId,
             student_id: studentId,
             data: newData
           });
@@ -84,7 +93,7 @@ export default function VisTestIndex () {
     };
   
     sendConversationData();
-  }, [conversationDataParent]);
+  }, [conversationDataParent, hasClickedNextPage]);
   
 
   return (
@@ -96,7 +105,9 @@ export default function VisTestIndex () {
           />
         </Grid>
         <Grid xs={8}>
-          <QuestionForm setAnswerDataParent={setAnswerDataParent} />
+          <QuestionForm setAnswerDataParent={setAnswerDataParent} 
+          onNextPageClick={handleNextPageClick} 
+          />
         </Grid>
       </Grid>
     </Box>

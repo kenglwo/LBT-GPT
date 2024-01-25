@@ -11,6 +11,9 @@ export default function ChatGPTInterface (props) {
   const [conversationData, setConversationData] = useState([])
   const [uploadedFile, setUploadedFile] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
+  // // 添加一个新状态来跟踪是否是第一次点击 Next Page
+  // const [isFirstNextPageClick, setIsFirstNextPageClick] = useState(true);
+
 
   const handleFileChange = event => {
     const file = event.target.files[0]
@@ -27,6 +30,19 @@ export default function ChatGPTInterface (props) {
       reader.readAsDataURL(file) // read the file via url
     }
   }
+
+  // const handleNextPageClick = async () => {
+  //   // 如果是第一次点击 Next Page，清空对话并保存
+  //   if (isFirstNextPageClick) {
+  //     await saveConversationData(conversationData, 'quiz_conversation_data');
+  //     setConversationData([]);
+  //     setIsFirstNextPageClick(false); // 更新状态，表示不再是第一次点击
+  //   } else {
+  //     // 如果不是第一次点击，继续保存对话但不清空
+  //     await saveConversationData(conversationData, 'quiz_conversation_data');
+  //     // 不清空 setConversationData([]);
+  //   }
+  // };
 
   const onClickSubmit = async () => {
     const now = new Date()
@@ -96,10 +112,6 @@ export default function ChatGPTInterface (props) {
     setUploadedFile(null)
   }
 
-  // // save to backend
-  // useEffect(() => {
-  //   props.setConversationDataParent(newConversationToSave);
-  // }, [newConversationToSave]);
 
   return (
     <>
