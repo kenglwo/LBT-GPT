@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_01_25_120339) do
+ActiveRecord::Schema.define(version: 2024_01_25_145823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 2024_01_25_120339) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "dalle3_image_mappings", force: :cascade do |t|
+    t.bigint "id_conversation_data"
+    t.string "image_url_local"
+  end
+
+  create_table "dalle3_image_mappings_quiz", force: :cascade do |t|
+    t.bigint "id_quiz_conversation_data"
+    t.string "image_url_local"
+  end
+
   create_table "quiz_conversation_data", force: :cascade do |t|
     t.string "student_id"
     t.string "role"
@@ -39,7 +49,7 @@ ActiveRecord::Schema.define(version: 2024_01_25_120339) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "student_info", force: :cascade do |t|
+  create_table "student_infos", id: :bigint, default: -> { "nextval('student_info_id_seq'::regclass)" }, force: :cascade do |t|
     t.string "student_id"
     t.string "student_name"
     t.datetime "created_at", precision: 6, null: false
