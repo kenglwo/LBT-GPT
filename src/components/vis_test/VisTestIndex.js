@@ -13,12 +13,12 @@ export default function VisTestIndex () {
   // const [hasEnteredTest, setHasEnteredTest] = useState(false);
   const [testStarted, setTestStarted] = useState(false)
 
-  const location = useLocation();
-  const { studentName, studentId } = location.state;
+  const location = useLocation()
+  const { studentName, studentId } = location.state
 
   const handleTestStart = () => {
     setTestStarted(true)
-    setConversationDataParent([]); // clear conversation Data
+    setConversationDataParent([]) // clear conversation Data
   }
 
   const resetTest = () => {
@@ -49,7 +49,7 @@ export default function VisTestIndex () {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       }
-      // const studentId = document.querySelector('#student_id').value
+      const studentId = location.state.studentId
       const body = {
         data_id: 'answer_data',
         student_id: studentId,
