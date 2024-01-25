@@ -19,22 +19,36 @@ export default function QuestionForm (props) {
   const [isTestStarted, setIsTestStarted] = useState(false);
 
   const startTest = () => {
-    // 清空当前对话数据
+    // clear the conversation history variable.
     props.setConversationDataParent([]);
 
-    // 标记测试开始
+    // mark the start of the test
     setIsTestStarted(true);
 
-    // 通知 VisTestIndex 组件，用户已进入测试
+    // notice "VisTestIndex" component that user has already enter the test
     props.setHasEnteredTest(true);
   };
 
   if (isTestStarted) {
-    // 如果测试已开始，渲染 Test1 组件
-    return <Test1 handleStudentAnswerArray={props.handleStudentAnswerArray} />;
-    
+    // if start the test，rander "Test1" component
+    return (
+      <>
+      <Test1 handleStudentAnswerArray={props.handleStudentAnswerArray} />
+    {answerSubmissionStatus === 'success' && (
+      <Alert severity='success' sx={{ width: '400px', ml: 5, mt: 3 }}>
+        Your answer was successfully submitted
+      </Alert>
+    )}
+    {answerSubmissionStatus === 'error' && (
+      <Alert severity='error' sx={{ width: '400px', ml: 5, mt: 3 }}>
+        Submission failed due to some error
+      </Alert>
+    )}
+      </>
+    );
+
   } else {
-    // 如果测试未开始，显示开始测试的按钮
+    // if haven't start the test, render the "Start Test" button with the instructions
     return (
       <div>
         {/* 其他表单元素 */}
@@ -44,36 +58,36 @@ export default function QuestionForm (props) {
   }
 
 
-  const handleStudentAnswerArray = array => {
-    try {
-      setStudentAnswerArrayParent(array)
-      setAnswerSubmissionStatus('success')
-    } catch (error) {
-      setAnswerSubmissionStatus('error')
-      console.log(error)
-    }
-  }
+//   const handleStudentAnswerArray = array => {
+//     try {
+//       setStudentAnswerArrayParent(array)
+//       setAnswerSubmissionStatus('success')
+//     } catch (error) {
+//       setAnswerSubmissionStatus('error')
+//       console.log(error)
+//     }
+//   }
 
-  const onChangeStudentName = name => {
-    setStudentName(name)
-  }
-  const onChangeStudentId = id => {
-    setStudentId(id)
-  }
+//   const onChangeStudentName = name => {
+//     setStudentName(name)
+//   }
+//   const onChangeStudentId = id => {
+//     setStudentId(id)
+//   }
 
-  const handleNextPageClick = () => {
-    // 执行任何需要的操作，如保存当前对话数据等
-    if (props.onNextPageClick) {
-      props.onNextPageClick(); // 调用从 VisTestIndex 传递的函数
-  }
-}
+//   const handleNextPageClick = () => {
+//     // 执行任何需要的操作，如保存当前对话数据等
+//     if (props.onNextPageClick) {
+//       props.onNextPageClick(); // 调用从 VisTestIndex 传递的函数
+//   }
+// }
 
-  useEffect(() => {
-    props.setAnswerDataParent(studentAnswerArrayParent)
-  }, [studentAnswerArrayParent])
-  return (
-    <>
-      <Box sx={{ display: 'flex', alignItems: 'center', mr: 4, float: 'left' }}>
+  // useEffect(() => {
+  //   props.setAnswerDataParent(studentAnswerArrayParent)
+  // }, [studentAnswerArrayParent])
+  // return (
+  //   <>
+      {/* <Box sx={{ display: 'flex', alignItems: 'center', mr: 4, float: 'left' }}>
         <span>Name: </span>
         <TextField
           sx={{ width: '200px', ml: 2, mt: 2 }}
@@ -96,17 +110,17 @@ export default function QuestionForm (props) {
             onChangeStudentId(e.target.value)
           }}
         />
-      </Box>
-      <Test1 handleStudentAnswerArray={handleStudentAnswerArray} />
-      <Button
+      </Box> */}
+      {/* <Test1 handleStudentAnswerArray={handleStudentAnswerArray} /> */}
+      {/* <Button
         variant='contained'
         sx={{ ml: 5, mt: 1 }}
         onClick={handleNextPageClick}
       >
         Next Page
-      </Button>
+      </Button> */}
 
-      {answerSubmissionStatus === 'success' && (
+      {/* {answerSubmissionStatus === 'success' && (
         <Alert severity='success' sx={{ width: '400px', ml: 5, mt: 3 }}>
           Your answer was successfully submitted
         </Alert>
@@ -115,7 +129,7 @@ export default function QuestionForm (props) {
         <Alert severity='error' sx={{ width: '400px', ml: 5, mt: 3 }}>
           Submission failed due to some error
         </Alert>
-      )}
-    </>
-  )
+      )} */}
+  //   </>
+  // )
 }

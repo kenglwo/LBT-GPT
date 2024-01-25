@@ -8,15 +8,16 @@ export default function VisTestIndex () {
   const [studentData, setStudentData] = useState([])
   const [conversationDataParent, setConversationDataParent] = useState([])
   const [answerDataParent, setAnswerDataParent] = useState([])
-  const [hasClickedNextPage, setHasClickedNextPage] = useState(false);
+  // const [hasClickedNextPage, setHasClickedNextPage] = useState(false);
+  const [hasEnteredTest, setHasEnteredTest] = useState(false);
 
 
-  const handleNextPageClick = () => {
-    if (!hasClickedNextPage) {
-      saveConversationData(conversationDataParent, 'conversation_data');
-      setHasClickedNextPage(true);
-    }
-  };
+  // const handleNextPageClick = () => {
+  //   if (!hasClickedNextPage) {
+  //     saveConversationData(conversationDataParent, 'conversation_data');
+  //     setHasClickedNextPage(true);
+  //   }
+  // };
 
   const handleConversationData = newEntries => {
     setConversationDataParent(currentData => [...currentData, ...newEntries]);
@@ -67,7 +68,7 @@ export default function VisTestIndex () {
         };
 
         // distinglish which table to store the data
-        const dataId = hasClickedNextPage ? 'quiz_conversation_data' : 'conversation_data';
+        const dataId = hasEnteredTest ? 'quiz_conversation_data' : 'conversation_data';
   
         const requests = conversationDataParent.map(newData => {
           const bodyJSON = JSON.stringify({
@@ -93,7 +94,7 @@ export default function VisTestIndex () {
     };
   
     sendConversationData();
-  }, [conversationDataParent, hasClickedNextPage]);
+  }, [conversationDataParent, hasEnteredTest]);
   
 
   return (
@@ -106,7 +107,7 @@ export default function VisTestIndex () {
         </Grid>
         <Grid xs={8}>
           <QuestionForm setAnswerDataParent={setAnswerDataParent} 
-          onNextPageClick={handleNextPageClick} 
+          setHasEnteredTest={setHasEnteredTest}
           />
         </Grid>
       </Grid>
