@@ -14,9 +14,11 @@ export default function VisTestIndex () {
   const [testStarted, setTestStarted] = useState(false)
 
   const location = useLocation()
+  const { studentName, studentId } = location.state
 
   const handleTestStart = () => {
     setTestStarted(true)
+    setConversationDataParent([]) // clear conversation Data
   }
 
   const resetTest = () => {
@@ -72,7 +74,7 @@ export default function VisTestIndex () {
     const sendConversationData = async () => {
       console.log('conversationDataParent to be saved', conversationDataParent)
       if (conversationDataParent.length > 0) {
-        const studentId = document.querySelector('#student_id').value
+        // const studentId = document.querySelector('#student_id').value
         const url = `${process.env.REACT_APP_API_URL}/save_student_data`
         const headers = {
           Accept: 'application/json',

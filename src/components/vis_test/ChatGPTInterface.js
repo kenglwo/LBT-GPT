@@ -17,9 +17,9 @@ export default function ChatGPTInterface ({setConversationDataParent, testStarte
   useEffect(() => {
     if (testStarted) {
       setConversationData([]); // Reset conversation data when the test starts
-      resetTest(); // Reset the testStarted flag in parent
+      // resetTest(); // Reset the testStarted flag in parent
     }
-  }, [testStarted, resetTest]);
+  }, [testStarted]);
 
 
   const handleFileChange = event => {
@@ -38,18 +38,6 @@ export default function ChatGPTInterface ({setConversationDataParent, testStarte
     }
   }
 
-  // const handleNextPageClick = async () => {
-  //   // 如果是第一次点击 Next Page，清空对话并保存
-  //   if (isFirstNextPageClick) {
-  //     await saveConversationData(conversationData, 'quiz_conversation_data');
-  //     setConversationData([]);
-  //     setIsFirstNextPageClick(false); // 更新状态，表示不再是第一次点击
-  //   } else {
-  //     // 如果不是第一次点击，继续保存对话但不清空
-  //     await saveConversationData(conversationData, 'quiz_conversation_data');
-  //     // 不清空 setConversationData([]);
-  //   }
-  // };
 
   const onClickSend = async () => {
     const now = new Date()
