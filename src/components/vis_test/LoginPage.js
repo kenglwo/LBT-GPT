@@ -60,7 +60,7 @@ export default function LoginPage (props) {
           setIfStudentDataSaved(false)
         }
       })
-      .catch(console.error)
+      .catch(setIfStudentDataSaved(false))
 
     // return if API failed to store student data
   }
@@ -109,9 +109,9 @@ export default function LoginPage (props) {
           <Button sx={{ mt: 4 }} variant='contained' onClick={onClickSubmit}>
             Submit
           </Button>
-          {ifStudentDataSaved === false && (
-            <Alert severity='error'>This is an error Alert.</Alert>
-          )}
+          {/* {ifStudentDataSaved === false && (
+            <Alert severity='error'>API error</Alert>
+          )} */}
         </Grid>
         <Grid xs={2} />
       </Grid>

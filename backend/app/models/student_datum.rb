@@ -1,2 +1,0 @@
-class StudentDatum < ApplicationRecord
-end

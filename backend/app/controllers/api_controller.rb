@@ -12,7 +12,7 @@ class ApiController < ApplicationController
         student_name = params['student_name']
         api_status = ""
 
-        new_data = StudentDatum.new(student_id: student_id, student_name: student_name)
+        new_data = StudentInfo.new(student_id: student_id, student_name: student_name)
         api_status = new_data.save ? "success" : "failed"
 
         render json: {"status": api_status}
