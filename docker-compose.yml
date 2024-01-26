@@ -15,7 +15,7 @@ services:
       - hoge:/frontend/node_modules
     working_dir: /frontend
     ports:
-      - 5777:3000
+      - 3000:3000
     tty: true
     stdin_open: true
     # command: sh -c "cd frontend && yarn dev"
