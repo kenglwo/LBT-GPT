@@ -1,23 +1,23 @@
-import { React, useState, useEffect } from 'react'
-import Box from '@mui/material/Box'
+import { React, useState } from 'react'
 import Alert from '@mui/material/Alert'
-import TextField from '@mui/material/TextField'
 import Test1 from './tests/Test1'
-import Button from '@mui/material/Button'
 
-export default function QuestionForm ({
-  setAnswerDataParent,
-  onTestStart,
-  setConversationDataParent
-}) {
-  const [studentAnswerArrayParent, setStudentAnswerArrayParent] = useState([])
+export default function QuestionForm (
+  props,
+  {
+    // setAnswerDataParent,
+    onTestStart
+    // setConversationDataParent
+  }
+) {
+  // const [studentAnswerArrayParent, setStudentAnswerArrayParent] = useState([])
   const [answerSubmissionStatus, setAnswerSubmissionStatus] = useState([
     'not yet'
   ])
-  const [studentName, setStudentName] = useState([])
-  const [studentId, setStudentId] = useState([])
+  // const [studentName, setStudentName] = useState([])
+  // const [studentId, setStudentId] = useState([])
 
-  const [currentPage, setCurrentPage] = useState(1)
+  // const [currentPage, setCurrentPage] = useState(1)
 
   // add a state to infer if user enter the test mode
   const [isTestStarted, setIsTestStarted] = useState(false)
@@ -35,8 +35,33 @@ export default function QuestionForm ({
 
   const handleStudentAnswerArray = array => {
     try {
-      setStudentAnswerArrayParent(array)
+      // setStudentAnswerArrayParent(array)
+      console.log('===== QuestionForm.js =======')
+      console.log(array)
       setAnswerSubmissionStatus('success')
+
+      // Send answer data to the server
+      const url = `${process.env.REACT_APP_API_URL}/save_student_data`
+      const method = 'POST'
+      const headers = {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
+      const body = {
+        data_id: 'answer_data',
+        student_id: props.studentId,
+        data: array
+      }
+      const bodyJSON = JSON.stringify(body)
+
+      fetch(url, { method: method, headers: headers, body: bodyJSON })
+        .then(res => res.json())
+        .then(result => {
+          if (result.status === 'success') {
+          } else if (result.status === 'failed') {
+          }
+        })
+        .catch()
     } catch (error) {
       setAnswerSubmissionStatus('error')
       console.log(error)
@@ -99,8 +124,8 @@ export default function QuestionForm ({
   // }, [studentAnswerArrayParent])
   // return (
   //   <>
-  {
-    /* <Box sx={{ display: 'flex', alignItems: 'center', mr: 4, float: 'left' }}>
+  // {
+  /* <Box sx={{ display: 'flex', alignItems: 'center', mr: 4, float: 'left' }}>
         <span>Name: </span>
         <TextField
           sx={{ width: '200px', ml: 2, mt: 2 }}
@@ -124,22 +149,22 @@ export default function QuestionForm ({
           }}
         />
       </Box> */
-  }
-  {
-    /* <Test1 handleStudentAnswerArray={handleStudentAnswerArray} /> */
-  }
-  {
-    /* <Button
+  // }
+  // {
+  /* <Test1 handleStudentAnswerArray={handleStudentAnswerArray} /> */
+  // }
+  // {
+  /* <Button
         variant='contained'
         sx={{ ml: 5, mt: 1 }}
         onClick={handleNextPageClick}
       >
         Next Page
       </Button> */
-  }
+  // }
 
-  {
-    /* {answerSubmissionStatus === 'success' && (
+  // {
+  /* {answerSubmissionStatus === 'success' && (
         <Alert severity='success' sx={{ width: '400px', ml: 5, mt: 3 }}>
           Your answer was successfully submitted
         </Alert>
@@ -149,7 +174,7 @@ export default function QuestionForm ({
           Submission failed due to some error
         </Alert>
       )} */
-  }
+  // }
   //   </>
   // )
 }
