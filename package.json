@@ -21,6 +21,7 @@
     "react": "^18.2.0",
     "react-chat-elements": "^12.0.9",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.3",
     "react-scripts": "^5.0.1",
     "styled-components": "^5.3.11",
     "typeface-roboto": "^1.1.13",
@@ -38,7 +39,15 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "jsx-a11y/alt-text": [
+        0
+      ],
+      "jsx-a11y/img-redundant-alt": [
+        0
+      ]
+    }
   },
   "browserslist": {
     "production": [
