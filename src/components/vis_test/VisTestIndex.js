@@ -73,9 +73,7 @@ export default function VisTestIndex () {
 
   useEffect(() => {
     const sendConversationData = async () => {
-      console.log('conversationDataParent to be saved', conversationDataParent)
       if (conversationDataParent.length > 0) {
-        // const studentId = document.querySelector('#student_id').value
         const url = `${process.env.REACT_APP_API_URL}/save_student_data`
         const headers = {
           Accept: 'application/json',
@@ -104,7 +102,7 @@ export default function VisTestIndex () {
             .then(result => {
               if (result.status !== 'success') {
                 console.error('Error saving data:', result)
-              }
+              } 
             })
             .catch(console.error)
         })

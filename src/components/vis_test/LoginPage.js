@@ -22,7 +22,7 @@ export default function LoginPage (props) {
   const onChangeStudentId = id => {
     setStudentId(id)
   }
-
+  
   const onClickSubmit = () => {
     if (studentName === '') {
       setIfStudentNameEmpty(true)

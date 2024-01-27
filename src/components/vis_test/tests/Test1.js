@@ -15,6 +15,7 @@ export default function Test1 (props) {
   const [studentAnswer2_2, setStudentAnswer2_2] = useState('')
   const [studentAnswer2_3, setStudentAnswer2_3] = useState('')
   const [studentAnswer3, setStudentAnswer3] = useState('')
+  // const [answerSubmissionStatus, setAnswerSubmissionStatus] = useState(null)
   // const [isVisible, setIsVisible] = useState(true); // default is true
 
   const [currentPage, setCurrentPage] = useState(1) // add a stage to control the page
@@ -52,6 +53,12 @@ export default function Test1 (props) {
     // get answer array from the child
     props.handleStudentAnswerArray(studentAnswerArray)
   }
+
+  useEffect(() => {
+   console.log("===========")
+   console.log(props.answerSubmissionStatus)
+  //  setAnswerSubmissionStatus(props.answerSubmissionStatus)
+  }, [props.answerSubmissionStatus])
 
   useEffect(() => {
     const answer0_1 = { question_id: 'test1_q0_1', answer: studentAnswer0_1 }
@@ -322,13 +329,17 @@ export default function Test1 (props) {
                 }}
               />
             </Box>
-            <Button
-              variant='contained'
-              sx={{ ml: 5, mt: 1 }}
-              onClick={onClickFinishButton}
-            >
-              Send
-            </Button>
+            {props.answerSubmissionStatus === "success" ? 
+            <div />
+              : 
+              <Button
+                variant='contained'
+                sx={{ ml: 5, mt: 1 }}
+                onClick={onClickFinishButton}
+              >
+                Send
+              </Button>
+            }
           </>
         )
       default:
