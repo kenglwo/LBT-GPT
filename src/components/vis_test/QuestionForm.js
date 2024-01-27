@@ -3,11 +3,11 @@ import Alert from '@mui/material/Alert'
 import Test1 from './tests/Test1'
 
 export default function QuestionForm (
-  props,
   {
     // setAnswerDataParent,
-    onTestStart
+    onTestStart,
     // setConversationDataParent
+    studentId
   }
 ) {
   // const [studentAnswerArrayParent, setStudentAnswerArrayParent] = useState([])
@@ -49,7 +49,7 @@ export default function QuestionForm (
       }
       const body = {
         data_id: 'answer_data',
-        student_id: props.studentId,
+        student_id: studentId,
         data: array
       }
       const bodyJSON = JSON.stringify(body)
