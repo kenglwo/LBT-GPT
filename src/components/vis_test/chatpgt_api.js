@@ -18,7 +18,7 @@ export const sendChatToGPT = async (conversationHistory, text, fileBase64) => {
   const dalle_endpoint = process.env.REACT_APP_DALLE_API_ENDPOINT
   const gpt_4V = process.env.REACT_APP_GPT_4V_MODEL
   const gpt_4 = process.env.REACT_APP_GPT_4_MODEL
-  // const gpt_4_preview = process.env.REACT_APP_GPT_4_PREVIEW_MODEL
+  const gpt_4_preview = process.env.REACT_APP_GPT_4_PREVIEW_MODEL
   const dalle2 = process.env.REACT_APP_DALLE_2_MODEL
 
   const headers = {

@@ -4,13 +4,13 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import test_0101_figure from '../../../assets/images/question_figures/test_01/test_01_01.png'
 import test_0102_figure from '../../../assets/images/question_figures/test_01/test_01_02.png'
-import test_0001_figure from '../../../assets/images/question_figures/test_00/pl_vis.jpg'
+// import test_0001_figure from '../../../assets/images/question_figures/test_00/pl_vis.jpg'
 
 export default function Test1 (props) {
   const [studentAnswerArray, setStudentAnswerArray] = useState([])
   const [studentAnswer0_1, setStudentAnswer0_1] = useState('')
   const [studentAnswer0_2, setStudentAnswer0_2] = useState('')
-  // const [studentAnswer0_3, setStudentAnswer0_3] = useState('')
+  const [studentAnswer0_3, setStudentAnswer0_3] = useState('')
   const [studentAnswer1_1, setStudentAnswer1_1] = useState('')
   const [studentAnswer1_2, setStudentAnswer1_2] = useState('')
   const [studentAnswer2_1, setStudentAnswer2_1] = useState('')
@@ -50,9 +50,9 @@ export default function Test1 (props) {
   //   setStudentAnswer2_3(answerText)
   // }
 
-  // const onChangeAnswer3 = answerText => {
-  //   setStudentAnswer3(answerText)
-  // }
+  const onChangeAnswer3 = answerText => {
+    setStudentAnswer3(answerText)
+  }
 
   const onClickFinishButton = () => {
     // get answer array from the child
@@ -69,7 +69,7 @@ export default function Test1 (props) {
     const answer0_1 = { question_id: 'test1_q0_1', answer: studentAnswer0_1 }
     const answer0_2 = { question_id: 'test1_q0_2', answer: studentAnswer0_2 }
     const answer0_3 = { question_id: 'test1_q0_3', answer: studentAnswer0_3 }
-    const answer1 = { question_id: 'test1_q1', answer: studentAnswer1 }
+    const answer1 = { question_id: 'test1_q1', answer: studentAnswer1_1 }
     const answer2_1 = { question_id: 'test1_q2_1', answer: studentAnswer2_1 }
     const answer2_2 = { question_id: 'test1_q2_2', answer: studentAnswer2_2 }
     const answer2_3 = { question_id: 'test1_q2_3', answer: studentAnswer2_3 }
@@ -92,7 +92,7 @@ export default function Test1 (props) {
     studentAnswer0_1,
     studentAnswer0_2,
     studentAnswer0_3,
-    studentAnswer1,
+    studentAnswer1_1,
     studentAnswer2_1,
     studentAnswer2_2,
     studentAnswer2_3,
@@ -200,7 +200,7 @@ export default function Test1 (props) {
             <Button
               variant='contained'
               sx={{ ml: 5, mt: 1 }}
-              onClick={() => setCurrentPage(2)}
+              onClick={() => setCurrentPage(3)}
             >
               Next Page
             </Button>
@@ -253,7 +253,7 @@ export default function Test1 (props) {
             <Button
               variant='contained'
               sx={{ ml: 5, mt: 1 }}
-              onClick={() => setCurrentPage(3)}
+              onClick={() => setCurrentPage(4)}
             >
               Next Page
             </Button>
