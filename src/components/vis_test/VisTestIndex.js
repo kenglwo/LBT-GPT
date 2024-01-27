@@ -6,15 +6,16 @@ import ChatGPTInterface from './ChatGPTInterface'
 import QuestionForm from './QuestionForm'
 
 export default function VisTestIndex () {
-  const [studentData, setStudentData] = useState([])
+  // const [studentData, setStudentData] = useState([])
   const [conversationDataParent, setConversationDataParent] = useState([])
-  const [answerDataParent, setAnswerDataParent] = useState([])
+  // const [answerDataParent, setAnswerDataParent] = useState([])
   // const [hasClickedNextPage, setHasClickedNextPage] = useState(false);
   // const [hasEnteredTest, setHasEnteredTest] = useState(false);
   const [testStarted, setTestStarted] = useState(false)
 
   const location = useLocation()
-  const { studentName, studentId } = location.state
+  // const { studentName, studentId } = location.state
+  const studentId = location.state.studentId
 
   const handleTestStart = () => {
     setTestStarted(true)
@@ -32,43 +33,43 @@ export default function VisTestIndex () {
   //   }
   // };
 
-  const handleConversationData = newEntries => {
-    setConversationDataParent(currentData => [...currentData, ...newEntries])
-  }
+  // const handleConversationData = newEntries => {
+  //   setConversationDataParent(currentData => [...currentData, ...newEntries])
+  // }
 
-  const handleAnswerDataParent = data => {
-    setAnswerDataParent(currentData => [...currentData, data])
-  }
+  // const handleAnswerDataParent = data => {
+  //   setAnswerDataParent(currentData => [...currentData, data])
+  // }
 
-  useEffect(() => {
-    if (answerDataParent.length > 0) {
-      console.log('answerDataParent', answerDataParent)
-      const url = `${process.env.REACT_APP_API_URL}/save_student_data`
-      const method = 'POST'
-      const headers = {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      }
-      const studentId = location.state.studentId
-      const body = {
-        data_id: 'answer_data',
-        student_id: studentId,
-        data: answerDataParent
-      }
-      const bodyJSON = JSON.stringify(body)
+  // useEffect(() => {
+  //   if (answerDataParent.length > 0) {
+  //     console.log('answerDataParent', answerDataParent)
+  //     const url = `${process.env.REACT_APP_API_URL}/save_student_data`
+  //     const method = 'POST'
+  //     const headers = {
+  //       Accept: 'application/json',
+  //       'Content-Type': 'application/json'
+  //     }
+  //     const studentId = location.state.studentId
+  //     const body = {
+  //       data_id: 'answer_data',
+  //       student_id: studentId,
+  //       data: answerDataParent
+  //     }
+  //     const bodyJSON = JSON.stringify(body)
 
-      fetch(url, { method: method, headers: headers, body: bodyJSON })
-        .then(res => res.json())
-        .then(result => {
-          if (result.status === 'success') {
-            //
-          } else {
-            //
-          }
-        })
-        .catch(console.error)
-    }
-  }, [answerDataParent])
+  //     fetch(url, { method: method, headers: headers, body: bodyJSON })
+  //       .then(res => res.json())
+  //       .then(result => {
+  //         if (result.status === 'success') {
+  //           //
+  //         } else {
+  //           //
+  //         }
+  //       })
+  //       .catch(console.error)
+  //   }
+  // }, [answerDataParent])
 
   useEffect(() => {
     const sendConversationData = async () => {
@@ -114,7 +115,7 @@ export default function VisTestIndex () {
     }
 
     sendConversationData()
-  }, [conversationDataParent, testStarted])
+  }, [conversationDataParent, testStarted, studentId])
 
   return (
     <Box sx={{ height: '100vh' }}>
@@ -128,10 +129,11 @@ export default function VisTestIndex () {
         </Grid>
         <Grid xs={8}>
           <QuestionForm
-            setAnswerDataParent={setAnswerDataParent}
+            studentId={studentId}
+            // setAnswerDataParent={setAnswerDataParent}
             // setTestStarted={setTestStarted}
             onTestStart={handleTestStart}
-            setConversationDataParent={setConversationDataParent}
+            // setConversationDataParent={setConversationDataParent}
           />
         </Grid>
       </Grid>

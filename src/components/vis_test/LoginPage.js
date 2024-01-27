@@ -1,11 +1,11 @@
-import { React, useState, useEffect } from 'react'
+import { React, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Grid from '@mui/material/Unstable_Grid2'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-import Alert from '@mui/material/Alert'
+// import Alert from '@mui/material/Alert'
 
 export default function LoginPage (props) {
   const [studentName, setStudentName] = useState('')
@@ -53,6 +53,7 @@ export default function LoginPage (props) {
         console.log(result.status)
         if (result.status === 'success') {
           setIfStudentDataSaved(true)
+          console.log(ifStudentDataSaved)
           navigate('/test', {
             state: { studentName: studentName, studentId: studentId }
           })

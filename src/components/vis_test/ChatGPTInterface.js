@@ -4,34 +4,32 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import Avatar from '@mui/material/Avatar'
 import Stack from '@mui/material/Stack'
-import { useLocation } from 'react-router-dom'
+// import { useLocation } from 'react-router-dom'
 import { sendChatToGPT } from './chatpgt_api'
 
-export default function ChatGPTInterface ({setConversationDataParent, testStarted, resetTest }) {
+export default function ChatGPTInterface ({
+  setConversationDataParent,
+  testStarted,
+  resetTest
+}) {
   const [studentInputPrompt, setStudentInputPrompt] = useState('')
   const [conversationData, setConversationData] = useState([])
   const [uploadedFile, setUploadedFile] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
 
-  const location = useLocation();
-  const { studentName, studentId } = location.state;
+  // const location = useLocation()
+  // const { studentName, studentId } = location.state;
 
   useEffect(() => {
     if (testStarted) {
-      setConversationData([]); // Reset conversation data when the test starts
+      setConversationData([]) // Reset conversation data when the test starts
       // resetTest(); // Reset the testStarted flag in parent
     }
-  }, [testStarted]); // only update ConversationData when testStarted changes
-
+  }, [testStarted]) // only update ConversationData when testStarted changes
 
   const handleFileChange = event => {
     const file = event.target.files[0]
     if (file) {
-      // const studentId = document.querySelector('#student_id').value
-      if (studentId === '') {
-        window.alert('Please input your student ID')
-        return
-      }
       const reader = new FileReader()
       reader.onloadend = () => {
         setUploadedFile(reader.result) // base 64 to save the file
@@ -39,7 +37,6 @@ export default function ChatGPTInterface ({setConversationDataParent, testStarte
       reader.readAsDataURL(file) // read the file via url
     }
   }
-
 
   const onClickSend = async () => {
     const now = new Date()
@@ -103,13 +100,12 @@ export default function ChatGPTInterface ({setConversationDataParent, testStarte
       ...newConversationEntries
     ])
     console.log('newConversationEntries', newConversationEntries)
-    
+
     setConversationDataParent(newConversationEntries) // update the parent component's conversation data
 
     // reset the input field
     setUploadedFile(null)
   }
-
 
   return (
     <>
@@ -155,19 +151,24 @@ export default function ChatGPTInterface ({setConversationDataParent, testStarte
               <h3>{conversation.role === 'user' ? 'You' : 'ChatGPT'}</h3>
             </Stack>
             <Box sx={{ m: 2, textAlign: 'left', whiteSpace: 'pre-wrap' }}>
-  {/* check if incoming content is base64 encoded figure */}
-  {conversation.content.startsWith('data:image') ? (
-    <img src={conversation.content} alt="User Uploaded" style={{ maxWidth: '100%', height: 'auto' }} />
-  ) : (
-    // check if incoming content is figure URL
-    conversation.content.startsWith('http') ? (
-      <img src={conversation.content} alt="Generated Image" style={{ maxWidth: '100%', height: 'auto' }} />
-    ) : (
-      <p>{conversation.content}</p>
-    )
-  )}
-</Box>
-
+              {/* check if incoming content is base64 encoded figure */}
+              {conversation.content.startsWith('data:image') ? (
+                <img
+                  src={conversation.content}
+                  alt='User Uploaded'
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                />
+              ) : // check if incoming content is figure URL
+              conversation.content.startsWith('http') ? (
+                <img
+                  src={conversation.content}
+                  alt='Generated Image'
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                />
+              ) : (
+                <p>{conversation.content}</p>
+              )}
+            </Box>
           </Box>
         ))}
         {isLoading && (
