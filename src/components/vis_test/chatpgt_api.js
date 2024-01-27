@@ -1,15 +1,32 @@
+import axios from 'axios';
+import axiosRetry from 'axios-retry';
+
+// 创建 Axios 实例
+const apiClient = axios.create();
+// 配置重试机制
+axiosRetry(apiClient, {
+  retries: 3, // 设置重试次数
+  retryDelay: axiosRetry.exponentialDelay, // 使用指数回退算法计算重试间隔
+  retryCondition: (error) => {
+    // 指定何种情况下进行重试，例如针对特定的HTTP状态码
+    return error.response.status === 429;
+  }
+});
 export const sendChatToGPT = async (conversationHistory, text, fileBase64) => {
   const apiKey = process.env.REACT_APP_CHATGPT_API_KEY
   const endpoint = process.env.REACT_APP_CHATGPT_API_ENDPOINT
   const dalle_endpoint = process.env.REACT_APP_DALLE_API_ENDPOINT
   const gpt_4V = process.env.REACT_APP_GPT_4V_MODEL
   const gpt_4 = process.env.REACT_APP_GPT_4_MODEL
+  const gpt_4_preview = process.env.REACT_APP_GPT_4_PREVIEW_MODEL
   const dalle2 = process.env.REACT_APP_DALLE_2_MODEL
 
   const headers = {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${apiKey}`
   };
+
+  let gpt_model = gpt_4_preview // defalut model is gpt_4_preview
 
   // use the conversation history to create the messages array. Need to handle the image_url type in previous conversation.
   const messages = conversationHistory.map(conversation => {
@@ -19,6 +36,9 @@ export const sendChatToGPT = async (conversationHistory, text, fileBase64) => {
       content = { type: 'text', text: conversation.content };
     } else if (conversation.type === 'image_url') {
       content = { type: 'image_url', image_url: conversation.content };
+
+      gpt_model = gpt_4V // if conversation has image, use gpt_4V model
+      
     }
   
     return {
@@ -31,6 +51,7 @@ export const sendChatToGPT = async (conversationHistory, text, fileBase64) => {
   // add the new text Prompt to the messages array. Need to distingish between figure and text.
   const newPrompt = { role: 'user', content: [{ type: 'text', text: text }] };
   messages.push(newPrompt);
+
 
 
   // first inquiry GPT-4: whether the user is asking for generating a figure
@@ -46,7 +67,13 @@ export const sendChatToGPT = async (conversationHistory, text, fileBase64) => {
   } else {
     console.log("noImageResponse!")
     // otherwise, call GPT 4-v to generate response
-    return await getGPT4VResponse(messages,fileBase64, gpt_4V, headers, endpoint);
+
+    // if new input includes a file, use gpt_4V model
+    if(fileBase64){
+      gpt_model = gpt_4V
+    }
+    console.log("gpt_model",gpt_model)
+    return await getGPT4VResponse(messages,fileBase64, gpt_model, headers, endpoint);
   }
 };
 
@@ -152,16 +179,26 @@ const getGPT4VResponse = async (messages,fileBase64, gpt_4V, headers, endpoint) 
     max_tokens: 700,
     messages: messages
   }
-
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers: headers,
-    body: JSON.stringify(data)
-  })
-  if (!response.ok) {
-    throw new Error('API failed')
+  try {
+    const response = await apiClient.post(endpoint, JSON.stringify(data), { headers });
+    const responseJSON = await response.data;
+    const llmAnswer = responseJSON.choices[0].message.content;
+    return llmAnswer;
+  } catch (error) {
+    // 处理错误
+    throw new Error('API failed: ' + error.message);
   }
-  const responseJSON = await response.json()
-  const llmAnswer = responseJSON.choices[0].message.content
-  return llmAnswer
+
+
+  // const response = await fetch(endpoint, {
+  //   method: 'POST',
+  //   headers: headers,
+  //   body: JSON.stringify(data)
+  // })
+  // if (!response.ok) {
+  //   throw new Error('API failed')
+  // }
+  // const responseJSON = await response.json()
+  // const llmAnswer = responseJSON.choices[0].message.content
+  // return llmAnswer
 }

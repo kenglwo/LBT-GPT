@@ -39,4 +39,14 @@ ActiveRecord::Schema.define(version: 2024_01_24_153556) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+<<<<<<< Updated upstream
+=======
+  create_table "student_infos", id: :bigint, default: -> { "nextval('student_info_id_seq'::regclass)" }, force: :cascade do |t|
+    t.string "student_id"
+    t.string "student_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+>>>>>>> Stashed changes
 end

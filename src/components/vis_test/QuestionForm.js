@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import Box from '@mui/material/Box'
 import Alert from '@mui/material/Alert'
-import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
 import Test1 from './tests/Test1'
 import Button from '@mui/material/Button'
 
@@ -62,8 +62,53 @@ export default function QuestionForm ({setAnswerDataParent, onTestStart, setConv
     // if haven't start the test, render the "Start Test" button with the instructions
     return (
       <div>
-        {/* 其他表单元素 */}
-        <button onClick={startTest}>Start Test</button>
+        <h2>Test One</h2>
+            <strong className='question_text'>
+              The concepts to be covered in this test are as follows:
+              <span style={{ color: 'green', fontWeight: 'bold' }}>
+                {' '}
+                Data mining &amp;
+              </span>
+              <span style={{ color: 'green', fontWeight: 'bold' }}>
+              {' '}
+                Data visualization
+              </span>
+              ,
+              <span style={{ color: 'green', fontWeight: 'bold' }}>
+              {' '}
+              Visual perception 
+              </span>
+              ,
+              <span style={{ color: 'green', fontWeight: 'bold' }}>
+              {' '}
+              Visualization design criteria 
+              </span>
+              {/* <span style={{ color: 'green', fontWeight: 'bold' }}>
+              {' '}
+                color map
+              </span> */}
+              .
+            </strong>
+            <br />
+            <strong>
+              Please use 
+              <span style={{ color: 'blue', fontWeight: 'bold' }}>
+              {' '}
+                15 
+                {' '}
+              </span> 
+              minutes to explore and learn these concepts with GPT
+              and then finish this test.
+            </strong>
+        {/* <button onClick={startTest}>Start Test</button> */}
+        <Button
+              variant='contained'
+              sx={{ ml: 5, mt: 1 }}
+              onClick={startTest}
+            >
+              Start Test
+            </Button>
+        
       </div>
     );
   }
