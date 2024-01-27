@@ -1,4 +1,5 @@
 import { React, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Alert from '@mui/material/Alert'
 import Test1 from './tests/Test1'
 
@@ -21,6 +22,7 @@ export default function QuestionForm (
 
   // add a state to infer if user enter the test mode
   const [isTestStarted, setIsTestStarted] = useState(false)
+  const navigate = useNavigate()
 
   const startTest = () => {
     onTestStart() // Trigger test start in VisTestIndex
@@ -38,7 +40,6 @@ export default function QuestionForm (
       // setStudentAnswerArrayParent(array)
       console.log('===== QuestionForm.js =======')
       console.log(array)
-      setAnswerSubmissionStatus('success')
 
       // Send answer data to the server
       const url = `${process.env.REACT_APP_API_URL}/save_student_data`
@@ -58,7 +59,10 @@ export default function QuestionForm (
         .then(res => res.json())
         .then(result => {
           if (result.status === 'success') {
-          } else if (result.status === 'failed') {
+            setAnswerSubmissionStatus('success')
+
+            // go to thank you page
+            navigate('/end')
           }
         })
         .catch()
@@ -72,7 +76,7 @@ export default function QuestionForm (
     // if start the test，rander "Test1" component
     return (
       <>
-        <Test1 handleStudentAnswerArray={handleStudentAnswerArray} />
+        <Test1 handleStudentAnswerArray={handleStudentAnswerArray} answerSubmissionStatus={answerSubmissionStatus} />
         {answerSubmissionStatus === 'success' && (
           <Alert severity='success' sx={{ width: '400px', ml: 5, mt: 3 }}>
             Your answer was successfully submitted
