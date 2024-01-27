@@ -20,6 +20,7 @@ services:
     tty: true
     stdin_open: true
     command: bash -c "yarn build"
+    # command: bash -c "yarn start"
   backend:
     container_name: vis_backend
     build:
