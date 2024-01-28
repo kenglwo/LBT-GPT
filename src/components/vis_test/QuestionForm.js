@@ -1,16 +1,16 @@
 import { React, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Alert from '@mui/material/Alert'
+import Button from '@mui/material/Button'
 import Test1 from './tests/Test1'
+// import Button from '@mui/material/Button'
 
-export default function QuestionForm (
-  {
-    // setAnswerDataParent,
-    onTestStart,
-    // setConversationDataParent
-    studentId
-  }
-) {
+export default function QuestionForm ({
+  // setAnswerDataParent,
+  onTestStart,
+  // setConversationDataParent
+  studentId
+}) {
   // const [studentAnswerArrayParent, setStudentAnswerArrayParent] = useState([])
   const [answerSubmissionStatus, setAnswerSubmissionStatus] = useState([
     'not yet'
@@ -76,7 +76,10 @@ export default function QuestionForm (
     // if start the test，rander "Test1" component
     return (
       <>
-        <Test1 handleStudentAnswerArray={handleStudentAnswerArray} answerSubmissionStatus={answerSubmissionStatus} />
+        <Test1
+          handleStudentAnswerArray={handleStudentAnswerArray}
+          answerSubmissionStatus={answerSubmissionStatus}
+        />
         {answerSubmissionStatus === 'success' && (
           <Alert severity='success' sx={{ width: '400px', ml: 5, mt: 3 }}>
             Your answer was successfully submitted
@@ -93,8 +96,44 @@ export default function QuestionForm (
     // if haven't start the test, render the "Start Test" button with the instructions
     return (
       <div>
-        {/* 其他表单元素 */}
-        <button onClick={startTest}>Start Test</button>
+        <h2>Test One</h2>
+        <strong className='question_text'>
+          The concepts to be covered in this test are as follows:
+          <span style={{ color: 'green', fontWeight: 'bold' }}>
+            {' '}
+            Data mining &amp;
+          </span>
+          <span style={{ color: 'green', fontWeight: 'bold' }}>
+            {' '}
+            Data visualization
+          </span>
+          ,
+          <span style={{ color: 'green', fontWeight: 'bold' }}>
+            {' '}
+            Visual perception
+          </span>
+          ,
+          <span style={{ color: 'green', fontWeight: 'bold' }}>
+            {' '}
+            Visualization design criteria
+          </span>
+          {/* <span style={{ color: 'green', fontWeight: 'bold' }}>
+              {' '}
+                color map
+              </span> */}
+          .
+        </strong>
+        <br />
+        <strong>
+          Please use
+          <span style={{ color: 'blue', fontWeight: 'bold' }}> 15 </span>
+          minutes to explore and learn these concepts with GPT and then finish
+          this test.
+        </strong>
+        {/* <button onClick={startTest}>Start Test</button> */}
+        <Button variant='contained' sx={{ ml: 5, mt: 1 }} onClick={startTest}>
+          Start Test
+        </Button>
       </div>
     )
   }
