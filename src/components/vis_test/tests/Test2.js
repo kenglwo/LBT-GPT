@@ -4,15 +4,13 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import test_0101_figure from '../../../assets/images/question_figures/test_01/test_01_01.png'
 import test_0102_figure from '../../../assets/images/question_figures/test_01/test_01_02.png'
-// import test_0001_figure from '../../../assets/images/question_figures/test_00/pl_vis.jpg'
 
 export default function Test1 (props) {
   const [studentAnswerArray, setStudentAnswerArray] = useState([])
   const [studentAnswer0_1, setStudentAnswer0_1] = useState('')
   const [studentAnswer0_2, setStudentAnswer0_2] = useState('')
   const [studentAnswer0_3, setStudentAnswer0_3] = useState('')
-  const [studentAnswer1_1, setStudentAnswer1_1] = useState('')
-  const [studentAnswer1_2, setStudentAnswer1_2] = useState('')
+  const [studentAnswer1, setStudentAnswer1] = useState('')
   const [studentAnswer2_1, setStudentAnswer2_1] = useState('')
   const [studentAnswer2_2, setStudentAnswer2_2] = useState('')
   const [studentAnswer2_3, setStudentAnswer2_3] = useState('')
@@ -28,27 +26,24 @@ export default function Test1 (props) {
   const onChangeAnswer0_2 = answerText => {
     setStudentAnswer0_2(answerText)
   }
-  // const onChangeAnswer0_3 = answerText => {
-  //   setStudentAnswer0_3(answerText)
-  // }
-  const onChangeAnswer1_1 = answerText => {
-    setStudentAnswer1_1(answerText)
+  const onChangeAnswer0_3 = answerText => {
+    setStudentAnswer0_3(answerText)
   }
-  const onChangeAnswer1_2 = answerText => {
-    setStudentAnswer1_2(answerText)
+  const onChangeAnswer1 = answerText => {
+    setStudentAnswer1(answerText)
   }
 
   const onChangeAnswer2_1 = answerText => {
     setStudentAnswer2_1(answerText)
   }
 
-  // const onChangeAnswer2_2 = answerText => {
-  //   setStudentAnswer2_2(answerText)
-  // }
+  const onChangeAnswer2_2 = answerText => {
+    setStudentAnswer2_2(answerText)
+  }
 
-  // const onChangeAnswer2_3 = answerText => {
-  //   setStudentAnswer2_3(answerText)
-  // }
+  const onChangeAnswer2_3 = answerText => {
+    setStudentAnswer2_3(answerText)
+  }
 
   const onChangeAnswer3 = answerText => {
     setStudentAnswer3(answerText)
@@ -60,16 +55,16 @@ export default function Test1 (props) {
   }
 
   useEffect(() => {
-    console.log('===========')
-    console.log(props.answerSubmissionStatus)
-    //  setAnswerSubmissionStatus(props.answerSubmissionStatus)
+   console.log("===========")
+   console.log(props.answerSubmissionStatus)
+  //  setAnswerSubmissionStatus(props.answerSubmissionStatus)
   }, [props.answerSubmissionStatus])
 
   useEffect(() => {
     const answer0_1 = { question_id: 'test1_q0_1', answer: studentAnswer0_1 }
     const answer0_2 = { question_id: 'test1_q0_2', answer: studentAnswer0_2 }
     const answer0_3 = { question_id: 'test1_q0_3', answer: studentAnswer0_3 }
-    const answer1 = { question_id: 'test1_q1', answer: studentAnswer1_1 }
+    const answer1 = { question_id: 'test1_q1', answer: studentAnswer1 }
     const answer2_1 = { question_id: 'test1_q2_1', answer: studentAnswer2_1 }
     const answer2_2 = { question_id: 'test1_q2_2', answer: studentAnswer2_2 }
     const answer2_3 = { question_id: 'test1_q2_3', answer: studentAnswer2_3 }
@@ -92,7 +87,7 @@ export default function Test1 (props) {
     studentAnswer0_1,
     studentAnswer0_2,
     studentAnswer0_3,
-    studentAnswer1_1,
+    studentAnswer1,
     studentAnswer2_1,
     studentAnswer2_2,
     studentAnswer2_3,
@@ -179,7 +174,7 @@ export default function Test1 (props) {
                 }}
               />
             </Box>
-            {/* <Box sx={{ m: 3 }}>
+            <Box sx={{ m: 3 }}>
               <strong className='question_text'>
                 0.3 What is a color scheme ? What is a color map? Could you give
                 some examples for both of them?
@@ -195,7 +190,7 @@ export default function Test1 (props) {
                   onChangeAnswer0_3(e.target.value)
                 }}
               />
-            </Box> */}
+            </Box>
 
             <Button
               variant='contained'
@@ -224,29 +219,12 @@ export default function Test1 (props) {
               <TextField
                 sx={{ width: '90%', ml: 2, mt: 2 }}
                 id='answer_zone_1_1'
-                value={studentAnswer1_1}
+                value={studentAnswer1}
                 multiline
                 rows={4}
                 placeholder='Enter your answer here'
                 onChange={e => {
-                  onChangeAnswer1_1(e.target.value)
-                }}
-              />
-            </Box>
-            <Box sx={{ m: 3 }}>
-              <strong className='question_text'>
-                2. Please evaluate this visualization's design against at least
-                one design principle.
-              </strong>
-              <TextField
-                sx={{ width: '90%', ml: 2, mt: 2 }}
-                id='answer_zone_1_2'
-                value={studentAnswer1_2}
-                multiline
-                rows={4}
-                placeholder='Enter your answer here'
-                onChange={e => {
-                  onChangeAnswer1_2(e.target.value)
+                  onChangeAnswer1(e.target.value)
                 }}
               />
             </Box>
@@ -285,7 +263,7 @@ export default function Test1 (props) {
                 }}
               />
             </Box>
-            {/* <Box sx={{ m: 3 }}>
+            <Box sx={{ m: 3 }}>
               <strong className='question_text'>
                 2.2 If we want to use the color to encode the number of PG
                 students graduated by each supervisor, please suggest a color
@@ -302,8 +280,8 @@ export default function Test1 (props) {
                   onChangeAnswer2_2(e.target.value)
                 }}
               />
-            </Box> */}
-            {/* <Box sx={{ m: 3 }}>
+            </Box>
+            <Box sx={{ m: 3 }}>
               <strong className='question_text'>
                 2.3 If we want to use the color to encode the research area of
                 supervisors, please suggest a color map.
@@ -319,7 +297,7 @@ export default function Test1 (props) {
                   onChangeAnswer2_3(e.target.value)
                 }}
               />
-            </Box> */}
+            </Box>
 
             <Button
               variant='contained'
@@ -351,9 +329,9 @@ export default function Test1 (props) {
                 }}
               />
             </Box>
-            {props.answerSubmissionStatus === 'success' ? (
-              <div />
-            ) : (
+            {props.answerSubmissionStatus === "success" ? 
+            <div />
+              : 
               <Button
                 variant='contained'
                 sx={{ ml: 5, mt: 1 }}
@@ -361,7 +339,7 @@ export default function Test1 (props) {
               >
                 Send
               </Button>
-            )}
+            }
           </>
         )
       default:
