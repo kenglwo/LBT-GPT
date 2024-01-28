@@ -4,9 +4,9 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import test_0101_figure from '../../../assets/images/question_figures/test_01/test_01_01.png'
 import test_0102_figure from '../../../assets/images/question_figures/test_01/test_01_02.png'
-// import test_0001_figure from '../../../assets/images/question_figures/test_00/pl_vis.jpg'
+import test_0001_figure from '../../../assets/images/question_figures/test_00/pl_vis.jpg'
 
-export default function Test1 (props) {
+export default function Test1(props) {
   const [studentAnswerArray, setStudentAnswerArray] = useState([])
   const [studentAnswer0_1, setStudentAnswer0_1] = useState('')
   const [studentAnswer0_2, setStudentAnswer0_2] = useState('')
@@ -16,11 +16,11 @@ export default function Test1 (props) {
   const [studentAnswer2_1, setStudentAnswer2_1] = useState('')
   // const [studentAnswer2_2, setStudentAnswer2_2] = useState('')
   // const [studentAnswer2_3, setStudentAnswer2_3] = useState('')
-  const [studentAnswer3, setStudentAnswer3] = useState('')
+  // const [studentAnswer3, setStudentAnswer3] = useState('')
   // const [answerSubmissionStatus, setAnswerSubmissionStatus] = useState(null)
   // const [isVisible, setIsVisible] = useState(true); // default is true
 
-  const [currentPage, setCurrentPage] = useState(1) // add a stage to control the page
+  const [currentPage, setCurrentPage] = useState(1); // add a stage to control the page
 
   const onChangeAnswer0_1 = answerText => {
     setStudentAnswer0_1(answerText)
@@ -50,9 +50,9 @@ export default function Test1 (props) {
   //   setStudentAnswer2_3(answerText)
   // }
 
-  const onChangeAnswer3 = answerText => {
-    setStudentAnswer3(answerText)
-  }
+  // const onChangeAnswer3 = answerText => {
+  //   setStudentAnswer3(answerText)
+  // }
 
   const onClickFinishButton = () => {
     // get answer array from the child
@@ -60,7 +60,7 @@ export default function Test1 (props) {
   }
 
   useEffect(() => {
-    console.log('===========')
+    console.log("===========")
     console.log(props.answerSubmissionStatus)
     //  setAnswerSubmissionStatus(props.answerSubmissionStatus)
   }, [props.answerSubmissionStatus])
@@ -69,20 +69,22 @@ export default function Test1 (props) {
     const answer0_1 = { question_id: 'test1_q0_1', answer: studentAnswer0_1 }
     const answer0_2 = { question_id: 'test1_q0_2', answer: studentAnswer0_2 }
     // const answer0_3 = { question_id: 'test1_q0_3', answer: studentAnswer0_3 }
-    const answer1 = { question_id: 'test1_q1', answer: studentAnswer1_1 }
-    const answer2_1 = { question_id: 'test1_', answer: studentAnswer2_1 }
+    const answer1_1 = { question_id: 'test1_q1_1', answer: studentAnswer1_1 }
+    const answer1_2 = { question_id: 'test1_q1_2', answer: studentAnswer1_2 }
+    const answer2_1 = { question_id: 'test1_q2_1', answer: studentAnswer2_1 }
     // const answer2_2 = { question_id: 'test1_q2_2', answer: studentAnswer2_2 }
     // const answer2_3 = { question_id: 'test1_q2_3', answer: studentAnswer2_3 }
-    const answer3 = { question_id: 'test1_q3', answer: studentAnswer3 }
+    // const answer3 = { question_id: 'test1_q3', answer: studentAnswer3 }
     const answerArray = [
       answer0_1,
       answer0_2,
       // answer0_3,
-      answer1,
-      answer2_1,
-      // answer2_2,
+      answer1_1,
+      answer1_2,
+      answer2_1
+      // answer2_2
       // answer2_3,
-      answer3
+      // answer3
     ]
 
     setStudentAnswerArray([...answerArray])
@@ -94,10 +96,10 @@ export default function Test1 (props) {
     // studentAnswer0_3,
     studentAnswer1_1,
     studentAnswer1_2,
-    studentAnswer2_1,
-    // studentAnswer2_2,
+    studentAnswer2_1
+    // studentAnswer2_2
     // studentAnswer2_3,
-    studentAnswer3
+    // studentAnswer3
   ]) // 添加依赖项数组
 
   const renderPage = () => {
@@ -105,51 +107,10 @@ export default function Test1 (props) {
       case 1:
         return (
           <>
-            <h2>Test One</h2>
-            <strong className='question_text'>
-              The concepts to be covered in this test are as follows:
-              <span style={{ color: 'green', fontWeight: 'bold' }}>
-                {' '}
-                data mining &amp;
-              </span>
-              <span style={{ color: 'green', fontWeight: 'bold' }}>
-                data visualization
-              </span>
-              ,
-              <span style={{ color: 'green', fontWeight: 'bold' }}>
-                color encoding
-              </span>
-              ,
-              <span style={{ color: 'green', fontWeight: 'bold' }}>
-                color scheme &amp;
-              </span>
-              <span style={{ color: 'green', fontWeight: 'bold' }}>
-                color map
-              </span>
-              .
-            </strong>
-            <br />
-            <strong>
-              Please use 10 minutes to explore and learn these concepts with GPT
-              and then finish this test.
-            </strong>
-
-            <Button
-              variant='contained'
-              sx={{ ml: 5, mt: 1 }}
-              onClick={() => setCurrentPage(2)}
-            >
-              Next Page
-            </Button>
-          </>
-        )
-      case 2:
-        return (
-          <>
+            <h2>Concept Question</h2>
             <Box sx={{ m: 3 }}>
               <strong className='question_text'>
-                0.1 What is the relationship between data mining and data
-                visualization?
+                0.1 What are the major advantages and shortcomings of data visualization?
               </strong>
               <TextField
                 sx={{ width: '90%', ml: 2, mt: 2 }}
@@ -165,8 +126,7 @@ export default function Test1 (props) {
             </Box>
             <Box sx={{ m: 3 }}>
               <strong className='question_text'>
-                0.2 What is encoding in data visualization? Could you give some
-                examples?
+                0.2 What are some common application areas of data visualization?
               </strong>
               <TextField
                 sx={{ width: '90%', ml: 2, mt: 2 }}
@@ -182,8 +142,7 @@ export default function Test1 (props) {
             </Box>
             {/* <Box sx={{ m: 3 }}>
               <strong className='question_text'>
-                0.3 What is a color scheme ? What is a color map? Could you give
-                some examples for both of them?
+                0.3 What is a color scheme ? What is a color map? Could you give some examples for both of them?
               </strong>
               <TextField
                 sx={{ width: '90%', ml: 2, mt: 2 }}
@@ -201,26 +160,26 @@ export default function Test1 (props) {
             <Button
               variant='contained'
               sx={{ ml: 5, mt: 1 }}
-              onClick={() => setCurrentPage(3)}
+              onClick={() => setCurrentPage(2)}
             >
               Next Page
             </Button>
+
           </>
         )
-      case 3:
+      case 2:
         return (
           <>
-            <p>Please analyze the color scheme used in the PG defense demo: </p>
+            {/* <p>Please analyze the following visualization design:</p> */}
             <img
-              src={test_0101_figure}
+              src={test_0001_figure}
               alt='User Uploaded'
-              style={{ maxWidth: '75%', height: 'auto' }}
+              style={{ maxWidth: '50%', height: 'auto' }}
             />
 
             <Box sx={{ m: 3 }}>
               <strong className='question_text'>
-                1. In the main view, what does the color encode? Do you agree
-                with the color scheme used? What are your suggestions?
+                1. Please analyze the pre-attentive visual properties utilized in this visualization design.
               </strong>
               <TextField
                 sx={{ width: '90%', ml: 2, mt: 2 }}
@@ -236,8 +195,7 @@ export default function Test1 (props) {
             </Box>
             <Box sx={{ m: 3 }}>
               <strong className='question_text'>
-                2. Please evaluate this visualization's design against at least
-                one design principle.
+                2. Please evaluate this visualization's design against at least one design principle.
               </strong>
               <TextField
                 sx={{ width: '90%', ml: 2, mt: 2 }}
@@ -254,26 +212,28 @@ export default function Test1 (props) {
             <Button
               variant='contained'
               sx={{ ml: 5, mt: 1 }}
-              onClick={() => setCurrentPage(4)}
+              onClick={() => setCurrentPage(3)}
             >
               Next Page
             </Button>
           </>
         )
-      case 4:
+      case 3:
         return (
           <>
-            <p>Please analyze the color scheme used in the PG defense demo: </p>
+            {/* <p>Please analyze the color scheme used in the PG defense demo: </p>
             <img
               src={test_0102_figure}
               alt='User Uploaded'
               style={{ maxWidth: '50%', height: 'auto' }}
-            />
+            /> */}
             <Box sx={{ m: 3 }}>
               <strong className='question_text'>
-                2.1 In the supervisor view, can you deduce or interpret what
-                does the color encode?
-              </strong>
+              2.	Please design a visualization that can help you to understand your undergraduate academic life better. Your visualization should include the following information: </strong>
+              <li>Describe the choice of visual display, data source(s) and data type(s) for your visualization.</li>
+              <li>Discuss the design requirement(s) and target viewer(s).</li>
+              <li>Describe your proposed design.</li>
+              
               <TextField
                 sx={{ width: '90%', ml: 2, mt: 2 }}
                 id='answer_zone_2_1'
@@ -288,9 +248,8 @@ export default function Test1 (props) {
             </Box>
             {/* <Box sx={{ m: 3 }}>
               <strong className='question_text'>
-                2.2 If we want to use the color to encode the number of PG
-                students graduated by each supervisor, please suggest a color
-                map.
+                2.2 If we want to use the color to encode the number of PG students
+                graduated by each supervisor, please suggest a color map.
               </strong>
               <TextField
                 sx={{ width: '90%', ml: 2, mt: 2 }}
@@ -322,39 +281,9 @@ export default function Test1 (props) {
               />
             </Box> */}
 
-            <Button
-              variant='contained'
-              sx={{ ml: 5, mt: 1 }}
-              onClick={() => setCurrentPage(5)}
-            >
-              Next Page
-            </Button>
-          </>
-        )
-      case 5:
-        return (
-          <>
-            <Box sx={{ m: 3 }}>
-              <strong className='question_text'>
-                3. If the two views use colors to encode totally different
-                things, will it cause any problems to users? How to avoid these
-                problems?
-              </strong>
-              <TextField
-                sx={{ width: '90%', ml: 2, mt: 2 }}
-                id='answer_zone_3_1'
-                value={studentAnswer3}
-                multiline
-                rows={4}
-                placeholder='Enter your answer here'
-                onChange={e => {
-                  onChangeAnswer3(e.target.value)
-                }}
-              />
-            </Box>
-            {props.answerSubmissionStatus === 'success' ? (
+            {props.answerSubmissionStatus === "success" ?
               <div />
-            ) : (
+              :
               <Button
                 variant='contained'
                 sx={{ ml: 5, mt: 1 }}
@@ -362,13 +291,47 @@ export default function Test1 (props) {
               >
                 Send
               </Button>
-            )}
+            }
           </>
         )
+      // case 4:
+      //   return (
+      //     <>
+      //       <Box sx={{ m: 3 }}>
+      //         <strong className='question_text'>
+      //           3. If the two views use colors to encode totally different
+      //           things, will it cause any problems to users? How to avoid these
+      //           problems?
+      //         </strong>
+      //         <TextField
+      //           sx={{ width: '90%', ml: 2, mt: 2 }}
+      //           id='answer_zone_3_1'
+      //           value={studentAnswer3}
+      //           multiline
+      //           rows={4}
+      //           placeholder='Enter your answer here'
+      //           onChange={e => {
+      //             onChangeAnswer3(e.target.value)
+      //           }}
+      //         />
+      //       </Box>
+      //       {props.answerSubmissionStatus === "success" ? 
+      //       <div />
+      //         : 
+      //         <Button
+      //           variant='contained'
+      //           sx={{ ml: 5, mt: 1 }}
+      //           onClick={onClickFinishButton}
+      //         >
+      //           Send
+      //         </Button>
+      //       }
+      //     </>
+      //   )
       default:
-        return <div>Page not found</div>
+        return <div>Page not found</div>;
     }
-  }
+  };
 
-  return <>{renderPage()}</>
+  return <>{renderPage()}</>;
 }
