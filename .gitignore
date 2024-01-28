@@ -5,7 +5,7 @@
 /.pnp
 /.firebase
 .pnp.js
-.env
+.env*
 .env_gpt3
 .env_gpt4
 src/components/open_ai/local_env.js
