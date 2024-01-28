@@ -55,16 +55,16 @@ export const sendChatToGPT = async (conversationHistory, text, fileBase64) => {
 
 
   // first inquiry GPT-4: whether the user is asking for generating a figure
-  const shouldGenerateImage = await askGPTShouldGenerateImage(text, gpt_4, headers, endpoint);
-  console.log("shouldGenerateImage",shouldGenerateImage)
+  // const shouldGenerateImage = await askGPTShouldGenerateImage(text, gpt_4, headers, endpoint);
+  // console.log("shouldGenerateImage",shouldGenerateImage)
 
-  if (shouldGenerateImage) {
-    // if GPT-4 recommend to generate a figure，call DALL-E 3
-    const imageResponse = await generateImageWithDALLE(text, dalle2, headers,dalle_endpoint); // 
-    console.log("imageResponse",imageResponse)
-    // return { type: 'image', content: imageResponse };
-    return imageResponse
-  } else {
+  // if (shouldGenerateImage) {
+  //   // if GPT-4 recommend to generate a figure，call DALL-E 3
+  //   const imageResponse = await generateImageWithDALLE(text, dalle2, headers,dalle_endpoint); // 
+  //   console.log("imageResponse",imageResponse)
+  //   // return { type: 'image', content: imageResponse };
+  //   return imageResponse
+  // } else {
     console.log("noImageResponse!")
     // otherwise, call GPT 4-v to generate response
 
@@ -74,7 +74,7 @@ export const sendChatToGPT = async (conversationHistory, text, fileBase64) => {
     }
     console.log("gpt_model",gpt_model)
     return await getGPT4VResponse(messages,fileBase64, gpt_model, headers, endpoint);
-  }
+  // }
 };
 
 const askGPTShouldGenerateImage = async (text, model, headers, endpoint) => {
