@@ -19,7 +19,9 @@ services:
       - 3000:3000
     tty: true
     stdin_open: true
-    command: bash -c "yarn build"
+    command: >
+      bash -c "yarn install &&
+        yarn build"
     # command: bash -c "yarn start"
   backend:
     container_name: vis_backend
@@ -35,10 +37,10 @@ services:
       - db
     stdin_open: true
     platform: linux/x86_64
-    # command: >
-    #   bash -c "rails db:migrate &&
-    #     rm -f tmp/pids/server.pid &&
-    #     rails s -p 3003 -b '0.0.0.0'"
+    command: >
+      bash -c "rails db:migrate &&
+        rm -f tmp/pids/server.pid &&
+        rails s -p 3003 -b '0.0.0.0'"
   db:
     container_name: vis_db
     build: ./db

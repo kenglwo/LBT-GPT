@@ -10,12 +10,12 @@ export default function Test1 (props) {
   const [studentAnswerArray, setStudentAnswerArray] = useState([])
   const [studentAnswer0_1, setStudentAnswer0_1] = useState('')
   const [studentAnswer0_2, setStudentAnswer0_2] = useState('')
-  const [studentAnswer0_3, setStudentAnswer0_3] = useState('')
+  // const [studentAnswer0_3, setStudentAnswer0_3] = useState('')
   const [studentAnswer1_1, setStudentAnswer1_1] = useState('')
   const [studentAnswer1_2, setStudentAnswer1_2] = useState('')
   const [studentAnswer2_1, setStudentAnswer2_1] = useState('')
-  const [studentAnswer2_2, setStudentAnswer2_2] = useState('')
-  const [studentAnswer2_3, setStudentAnswer2_3] = useState('')
+  // const [studentAnswer2_2, setStudentAnswer2_2] = useState('')
+  // const [studentAnswer2_3, setStudentAnswer2_3] = useState('')
   const [studentAnswer3, setStudentAnswer3] = useState('')
   // const [answerSubmissionStatus, setAnswerSubmissionStatus] = useState(null)
   // const [isVisible, setIsVisible] = useState(true); // default is true
@@ -68,20 +68,20 @@ export default function Test1 (props) {
   useEffect(() => {
     const answer0_1 = { question_id: 'test1_q0_1', answer: studentAnswer0_1 }
     const answer0_2 = { question_id: 'test1_q0_2', answer: studentAnswer0_2 }
-    const answer0_3 = { question_id: 'test1_q0_3', answer: studentAnswer0_3 }
+    // const answer0_3 = { question_id: 'test1_q0_3', answer: studentAnswer0_3 }
     const answer1 = { question_id: 'test1_q1', answer: studentAnswer1_1 }
-    const answer2_1 = { question_id: 'test1_q2_1', answer: studentAnswer2_1 }
-    const answer2_2 = { question_id: 'test1_q2_2', answer: studentAnswer2_2 }
-    const answer2_3 = { question_id: 'test1_q2_3', answer: studentAnswer2_3 }
+    const answer2_1 = { question_id: 'test1_', answer: studentAnswer2_1 }
+    // const answer2_2 = { question_id: 'test1_q2_2', answer: studentAnswer2_2 }
+    // const answer2_3 = { question_id: 'test1_q2_3', answer: studentAnswer2_3 }
     const answer3 = { question_id: 'test1_q3', answer: studentAnswer3 }
     const answerArray = [
       answer0_1,
       answer0_2,
-      answer0_3,
+      // answer0_3,
       answer1,
       answer2_1,
-      answer2_2,
-      answer2_3,
+      // answer2_2,
+      // answer2_3,
       answer3
     ]
 
@@ -91,11 +91,12 @@ export default function Test1 (props) {
   }, [
     studentAnswer0_1,
     studentAnswer0_2,
-    studentAnswer0_3,
+    // studentAnswer0_3,
     studentAnswer1_1,
+    studentAnswer1_2,
     studentAnswer2_1,
-    studentAnswer2_2,
-    studentAnswer2_3,
+    // studentAnswer2_2,
+    // studentAnswer2_3,
     studentAnswer3
   ]) // 添加依赖项数组
 
