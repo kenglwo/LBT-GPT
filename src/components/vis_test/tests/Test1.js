@@ -2,8 +2,8 @@ import { React, useState, useEffect } from 'react'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
-import test_0101_figure from '../../../assets/images/question_figures/test_01/test_01_01.png'
-import test_0102_figure from '../../../assets/images/question_figures/test_01/test_01_02.png'
+// import test_0101_figure from '../../../assets/images/question_figures/test_01/test_01_01.png'
+// import test_0102_figure from '../../../assets/images/question_figures/test_01/test_01_02.png'
 import test_0001_figure from '../../../assets/images/question_figures/test_00/pl_vis.jpg'
 
 export default function Test1(props) {
