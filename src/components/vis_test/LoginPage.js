@@ -22,7 +22,7 @@ export default function LoginPage (props) {
   const onChangeStudentId = id => {
     setStudentId(id)
   }
-  
+
   const onClickSubmit = () => {
     if (studentName === '') {
       setIfStudentNameEmpty(true)
@@ -107,7 +107,7 @@ export default function LoginPage (props) {
                 : {})}
             />
           </Stack>
-          <Button sx={{ mt: 4 }} variant='contained' onClick={onClickSubmit}>
+          <Button sx={{ mt: 4 }} variant='contained' onClick={onClickSubmit} disabled={ifStudentIdEmpty || ifStudentNameEmpty ? true : false}>
             Submit
           </Button>
           {/* {ifStudentDataSaved === false && (
