@@ -54,16 +54,10 @@ export default function LoginPage (props) {
     fetch(url, { method: method, headers: headers, body: bodyJSON })
       .then(res => res.json())
       .then(result => {
-        console.log(result.status)
-        if (result.status === 'success') {
           setIfStudentDataSaved(true)
-          console.log(ifStudentDataSaved)
           navigate('/test', {
             state: { studentName: studentName, studentId: studentId }
           })
-        } else if (result.status === 'failed') {
-          setIfStudentDataSaved(false)
-        }
       })
       .catch(setIfStudentDataSaved(false))
 
