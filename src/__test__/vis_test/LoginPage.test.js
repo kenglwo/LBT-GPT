@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import {render, screen, waitFor, getByPlaceholderText } from "@testing-library/react"
+import {render, screen, waitFor, fireEvent } from "@testing-library/react"
 import userEvent from '@testing-library/user-event';
 import {MemoryRouter} from 'react-router-dom'
 import LoginPage from "../../components/vis_test/LoginPage"
@@ -45,6 +45,8 @@ describe("Login Page Test", () => {
         userEvent.type(container.querySelector('#student_id'), input.name);
         userEvent.type(container.querySelector('#student_name'), "");
 
+        const button = screen.getByRole('button')
+        fireEvent.click(button)
         await waitFor(() => expect(screen.getByRole('button')).toBeDisabled());
     });
 
@@ -58,6 +60,8 @@ describe("Login Page Test", () => {
         userEvent.type(container.querySelector('#student_id'), "");
         userEvent.type(container.querySelector('#student_name'), input.password);
 
+        const button = screen.getByRole('button')
+        fireEvent.click(button)
         await waitFor(() => expect(screen.getByRole('button')).toBeDisabled());
     });
 
@@ -71,6 +75,8 @@ describe("Login Page Test", () => {
         userEvent.type(container.querySelector('#student_id'), "");
         userEvent.type(container.querySelector('#student_name'), "");
 
+        const button = screen.getByRole('button')
+        fireEvent.click(button)
         await waitFor(() => expect(screen.getByRole('button')).toBeDisabled());
     });
 });
