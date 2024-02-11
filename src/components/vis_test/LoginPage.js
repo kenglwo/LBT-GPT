@@ -17,10 +17,12 @@ export default function LoginPage (props) {
 
   const onChangeStudentName = name => {
     setStudentName(name)
+    name.length === 0 ? setIfStudentNameEmpty(true) : setIfStudentNameEmpty(false)
   }
 
   const onChangeStudentId = id => {
     setStudentId(id)
+    id.length === 0 ? setIfStudentIdEmpty(true) : setIfStudentIdEmpty(false)
   }
 
   const onClickSubmit = () => {
@@ -33,6 +35,8 @@ export default function LoginPage (props) {
     if (studentId === '') {
       setIfStudentIdEmpty(true)
       return
+    } else {
+        setIfStudentIdEmpty(false)
     }
 
     const url = `${process.env.REACT_APP_API_URL}/save_student_info`
