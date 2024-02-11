@@ -12,7 +12,7 @@ const input = {
 
 describe("Login Page Test", () => {
     it('render LoginPange component', async () => {
-        const {container} = render(
+        render(
             <MemoryRouter>
                 <LoginPage />
             </MemoryRouter>
@@ -35,4 +35,42 @@ describe("Login Page Test", () => {
         await waitFor(() => expect(screen.getByRole('button')).toBeEnabled());
     });
 
+    it('Input non-empty student_id and empty student_name', async () => {
+        const {container} = render(
+            <MemoryRouter>
+                <LoginPage />
+            </MemoryRouter>
+        );
+
+        userEvent.type(container.querySelector('#student_id'), input.name);
+        userEvent.type(container.querySelector('#student_name'), "");
+
+        await waitFor(() => expect(screen.getByRole('button')).toBeDisabled());
+    });
+
+    it('Input empty student_id and non-empty student_name', async () => {
+        const {container} = render(
+            <MemoryRouter>
+                <LoginPage />
+            </MemoryRouter>
+        );
+
+        userEvent.type(container.querySelector('#student_id'), "");
+        userEvent.type(container.querySelector('#student_name'), input.password);
+
+        await waitFor(() => expect(screen.getByRole('button')).toBeDisabled());
+    });
+
+    it('Input empty student_id and empty student_name', async () => {
+        const {container} = render(
+            <MemoryRouter>
+                <LoginPage />
+            </MemoryRouter>
+        );
+
+        userEvent.type(container.querySelector('#student_id'), "");
+        userEvent.type(container.querySelector('#student_name'), "");
+
+        await waitFor(() => expect(screen.getByRole('button')).toBeDisabled());
+    });
 });
