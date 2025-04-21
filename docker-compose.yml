@@ -20,8 +20,7 @@ services:
     tty: true
     stdin_open: true
     command: >
-      bash -c "yarn install &&
-        yarn build"
+      bash -c "yarn install && yarn build"
     # command: bash -c "yarn start"
   backend:
     container_name: vis_backend
@@ -46,6 +45,7 @@ services:
     build: ./db
     volumes:
       - zixin_db:/var/lib/postgresql/data
+      - ./db:/db
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
